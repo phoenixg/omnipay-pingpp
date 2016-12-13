@@ -1,0 +1,19 @@
+HTTP/1.1 400 Bad Request
+Date: Thu, 08 Dec 2016 06:37:52 GMT
+Content-Type: application/json;charset=utf-8
+Content-Length: 209
+Connection: keep-alive
+X-Powered-By: PHP/5.6.25
+Access-Control-Allow-Methods: GET, POST, HEAD, OPTIONS, DELETE
+Access-Control-Max-Age: 300
+Access-Control-Allow-Credentials: true
+Cache-Control: no-cache, no-store
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Pingplusplus-Signature: bHy//UhE+vvdV4C+4jVOhpvRU+d21+NK0yMQcUBoSTlv/Wjh3Di4EpZXoAE+4k2OuKtPqD9PxoGeaCeuhAPptks6fG2m8gmuyhJrTsCokExfVkjuwmCvAKvB2qDj2zFlqGNMRiTozB2ONHOgTNRQG2x2/bkAVxYOYIsHiakEXdOdYIqZ2SWkzX97cXlBgS6b1dctQgR3/p286cjW/YojXk2IQHEvfk2+6fUT2Q3ZgyY/ugsJb+g/5PUYfil9lS/H1KNMLTQ0Cwx7BtRMdBn4CVNTJg1Ijt9A9ohZJHX6J9YxWt8XANgsvmgJwurzPC2IEvTebGAViK/GtXZZT3aloA==
+
+{
+    "error": {
+        "type": "invalid_request_error",
+        "message": "不能对订单号 4360de39f200172f 发起退款，因为已经全额退款了。Charge id: ch_ubn9uDDezzXDizv9SKXXDiPO。"
+    }
+}

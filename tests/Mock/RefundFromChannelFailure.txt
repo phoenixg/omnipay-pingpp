@@ -1,0 +1,30 @@
+HTTP/1.1 200 OK
+Date: Thu, 08 Dec 2016 06:39:11 GMT
+Content-Type: application/json;charset=utf-8
+Content-Length: 597
+Connection: keep-alive
+X-Powered-By: PHP/5.6.25
+Access-Control-Allow-Methods: GET, POST, HEAD, OPTIONS, DELETE
+Access-Control-Max-Age: 300
+Access-Control-Allow-Credentials: true
+Cache-Control: no-cache, no-store
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Pingplusplus-Signature: GQSpaXeZRdURT71yFnZ7gpxUlkYH2bKN+Ovst6cnE0NzqJLZe/7rGpJboOnU5CriODwK5oBgB6JainhNA7x0wOBU34pofaF8CAML/DPX1SW5C146v2rJhDU2M66cdV5BE+q1Qzm30Sikradvn4AxYLgM+bOtDD2F031gySoP8XMsFebMhxODcON5kme64PIlSLwTKuR5sbPz7xFwvHj1QbZodweyEbDMpriECCuhmOLeARyCdNMmMQS34aPK3dlR8O+Cs14SGk6vMNttG0Xh2qz6AAZAdL6NlXzGbM2b/BMJHdpo/VPOx+LNGZ0iJs1il//BGSsyfuF+JcWLmfviyA==
+
+{
+    "id": "re_Ouz5GSfv1Gm1S4WzTCaXXPSK",
+    "object": "refund",
+    "order_no": "Ouz5GSfv1Gm1S4WzTCaXXPSK",
+    "amount": 10,
+    "created": 1481179150,
+    "succeed": false,
+    "status": "failed",
+    "time_succeed": null,
+    "description": "Test Refund Description",
+    "failure_code": "refund_refused_msg",
+    "failure_msg": "退款 wx_pub 已被支付渠道拒绝。来自渠道的信息：交易未结算资金不足，请使用可用余额退款",
+    "metadata": {},
+    "charge": "ch_qDun9KKC0uz9G0KSGKaHKybP",
+    "charge_order_no": "a87ae44324f4a38d",
+    "transaction_no": null
+}

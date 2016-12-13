@@ -1,0 +1,69 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 15 Feb 2016 18:25:28 GMT
+Content-Type: application/json;charset=utf-8
+Content-Length: 995
+Connection: keep-alive
+Cache-Control: no-cache, no-store
+Access-Control-Allow-Credentials: true
+Access-Control-Max-Age: 300
+
+{
+  "id": "ch_14ynXPmPqzb1SCCeXDX9yTOC",
+  "object": "charge",
+  "created": 1481169436,
+  "livemode": false,
+  "paid": false,
+  "refunded": false,
+  "app": "app_9SSaPOaDuPCKvHSy",
+  "channel": "alipay_wap",
+  "order_no": "20161208115713238239",
+  "client_ip": "127.0.0.1",
+  "amount": 1,
+  "amount_settle": 1,
+  "currency": "cny",
+  "subject": "Here is demo subject",
+  "body": "Here is demo body",
+  "extra": {
+    "success_url": "http://www.yourdomain.com/path/to/awesome/return.php",
+    "cancel_url": "http://www.yourdomain.com/path/to/awesome/cancel.php",
+    "app_pay": true
+  },
+  "time_paid": null,
+  "time_expire": 1481173033,
+  "time_settle": null,
+  "transaction_no": null,
+  "refunds": {
+    "object": "list",
+    "url": "/v1/charges/ch_14ynXPmPqzb1SCCeXDX9yTOC/refunds",
+    "has_more": false,
+    "data": []
+  },
+  "amount_refunded": 0,
+  "failure_code": null,
+  "failure_msg": null,
+  "metadata": {
+    "foo": "bar"
+  },
+  "credential": {
+    "object": "credential",
+    "alipay_wap": {
+      "channel_url": "https://mapi.alipay.com/gateway.do",
+      "_input_charset": "utf-8",
+      "body": "Here is demo body",
+      "it_b_pay": "2016-12-08 12:57:13",
+      "notify_url": "https%3A%2F%2Fnotify.pingxx.com%2Fnotify%2Fcharges%2Fch_14ynXPmPqzb1SCCeXDX9yTOC",
+      "out_trade_no": "20161208115713238239",
+      "partner": "2008236853743214",
+      "payment_type": "1",
+      "return_url": "http%3A%2F%2Fwww.yourdomain.com%2Fpath%2Fto%2Fawesome%2Freturn.php",
+      "seller_id": "2008236853743214",
+      "service": "alipay.wap.create.direct.pay.by.user",
+      "subject": "Here is demo subject",
+      "total_fee": "0.01",
+      "sign": "BtR8E+el4ltB2PQ0LlSS7mKVuKkqgUpoxmaJC1d4UCuaiGvTtWFlPjWuipoAPyD3Chn96RCjg4R5ehFmnPUq1UVC8t6FRl/uxnFyE8mrR2CfNXUmJBIfNP54/aqxTN8CylFA1n6oVHT4vE9fcRnY5zNwL+NyuZPIXN1gcYNU+FI=",
+      "sign_type": "RSA"
+    }
+  },
+  "description": "Here is demo description"
+}

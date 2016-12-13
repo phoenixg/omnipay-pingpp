@@ -1,0 +1,20 @@
+HTTP/1.1 400 Bad Request
+Date: Thu, 08 Dec 2016 06:56:03 GMT
+Content-Type: application/json;charset=utf-8
+Content-Length: 168
+Connection: keep-alive
+X-Powered-By: PHP/5.6.25
+Access-Control-Allow-Methods: GET, POST, HEAD, OPTIONS, DELETE
+Access-Control-Max-Age: 300
+Access-Control-Allow-Credentials: true
+Cache-Control: no-cache, no-store
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Pingplusplus-Signature: CCsAsJeSd4HMyoFpMZY3gsOkZ4FD+aDLBUO7jXcLQBDzevhzzDJqIZ4O/ag2WDhOqPomrs1g/dwrYb6bXMb2FAb5u/lApMbUiyN5GGx4ArXmQR9pNo8PiubXszyseysXiBRoIEBR2q+4nLdI1iIhy2+AiNlxgCzk0DzH4mjEnc2MVXiNohmOYqKLILSiu0m1hZrO1j0hdi7lgwcUDuHxfjZlUhwRx58KGX8sSPc6YSfZe/RjwOB66Zal3oDJkr3AdUkNWZBZ1Llu7WReYZYNg+aDvKbVJlfabw/vb6AT+iGCozeICXY0gvINUGwp1054iAPeHGpbFv18dEfy43agTQ==
+
+{
+    "error": {
+        "type": "invalid_request_error",
+        "message": "请使用商品订单号进行操作。",
+        "code": "charge_request_invalid"
+    }
+}

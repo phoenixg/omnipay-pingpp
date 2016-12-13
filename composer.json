@@ -1,0 +1,50 @@
+{
+    "name": "omnipay/pingpp",
+    "type": "library",
+    "description": "Pingpp driver for the Omnipay payment processing library",
+    "keywords": [
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "pingpp",
+        "ping++",
+        "pingplusplus"
+    ],
+    "homepage": "https://git.pingxx.com/phoenixg/omnipay-pingpp",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Huang Feng",
+            "email": "phoenixg@pingxx.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Omnipay\\Pingpp\\" : "src/" }
+    },
+    "require": {
+        "omnipay/common": "~2.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "~2.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    },
+    "config": {
+        "secure-http": false,
+        "preferred-install": "dist"
+    },
+    "repositories":  [
+        {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        },
+        {
+          "packagist": false
+        }
+    ]
+}

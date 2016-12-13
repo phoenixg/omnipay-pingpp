@@ -1,0 +1,67 @@
+HTTP/1.1 200 OK
+Date: Thu, 08 Dec 2016 06:36:24 GMT
+Content-Type: application/json;charset=utf-8
+Content-Length: 815
+Connection: keep-alive
+X-Powered-By: PHP/5.6.25
+Access-Control-Allow-Methods: GET, POST, HEAD, OPTIONS, DELETE
+Access-Control-Max-Age: 300
+Access-Control-Allow-Credentials: true
+Cache-Control: no-cache, no-store
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Pingplusplus-Signature: KPd7T3iBCYtt1AENJiDfC6BF13nazc4eAlVCi8csd4DdA5CBlYDfCM+hoVbP+GmtQCdII5MbDUnV4uk71VLac853llLy1ZukHopvjG/Ul+mHD6UjBeCB+0WoSgxxB0XtmCv3IaAXtQiAw3OehDryGllRy7+RGnJnwyQTSPkvFP3VHstpuDi72kKUi1Tr5tR/AQPUbh75ncKy03h8nah8ADmZzGuv30Zf3S6MN69vQrd06B/7+8Z8R8x05zVj/56OYEjEdy8FsgectQZaEMIZCNPwNQnEpprEfLFXzw5PQeLpJijFz7JCHSrMfnasw11V8t1M+EsUnyGL06BgT/vibw==
+
+{
+    "id": "151608161453545102",
+    "app": "app_abcdefghweqzadfs",
+    "object": "batch_refund",
+    "batch_no": "batchrefund20160801001",
+    "created": "1409634192",
+    "description": "Batch refund description.",
+    "charges": [
+        "ch_L8qn10mLmr1GS8e5OODmHaL4",
+        "ch_fdOmHaLmLmr1GOD4qn1dS8e5"
+    ],
+    "refunds": {
+        "object": "list",
+        "url": null,
+        "has_more": false,
+        "data": [
+            {
+                "id": "re_y1u944PmfnrTHyvnL0nD0iD1",
+                "object": "refund",
+                "order_no": "y1u944PmfnrTHyvnL0nD0iD1",
+                "amount": 10,
+                "created": 1409634160,
+                "succeed": true,
+                "status": "succeeded",
+                "time_succeed": 1409634192,
+                "description": "Batch refund description.",
+                "failure_code": null,
+                "failure_msg": null,
+                "metadata": {},
+                "charge": "ch_L8qn10mLmr1GS8e5OODmHaL4",
+                "charge_order_no": "123456789",
+                "transaction_no": "2004450349201512090096425280"
+            },
+            {
+                "id": "re_nL0nD0iDPmfy1u944HyvnrT1",
+                "object": "refund",
+                "order_no": "nL0nD0iDPmfy1u944HyvnrT1",
+                "amount": 10,
+                "created": 1409634160,
+                "succeed": true,
+                "status": "succeeded",
+                "time_succeed": 1409634192,
+                "description": "Batch refund description.",
+                "failure_code": null,
+                "failure_msg": null,
+                "metadata": {},
+                "charge": "ch_fdOmHaLmLmr1GOD4qn1dS8e5",
+                "charge_order_no": "123456789",
+                "transaction_no": "2004450349201512090096425281"
+            }
+        ]
+    },
+    "refund_url": null
+}

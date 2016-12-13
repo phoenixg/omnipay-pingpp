@@ -1,0 +1,20 @@
+HTTP/1.1 400 Bad Request
+Date: Thu, 08 Dec 2016 06:57:46 GMT
+Content-Type: application/json;charset=utf-8
+Content-Length: 177
+Connection: keep-alive
+X-Powered-By: PHP/5.6.25
+Access-Control-Allow-Methods: GET, POST, HEAD, OPTIONS, DELETE
+Access-Control-Max-Age: 300
+Access-Control-Allow-Credentials: true
+Cache-Control: no-cache, no-store
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Pingplusplus-Signature: onerdn5XVfF9U0QfvqdcmUTt0W363CDxA4jqWLJswFpcQWYPqgdkV/9DhWmAFwLSX00ScW7kerBiv4G7FN7qbqdJtYL4FeskBRWVZUq9cqLeymUVmRYUSUwYO6EyGKA1+cw4+xxMxUJ/9z6kPM0PXbHnUuO1+D5ygNPVyAFp1B06iecSviQg2PDhFq0uEIGrhghxM0h1GIgvpe6L0FV2+oMsOGyFLzUozTFJJ7oUyXFD+qPRnN3pKftyHqe6RgM455iN1V4BTC6IFPs970v9TVAyY9pBB6w+q0P7699HAW56DeeMD8mojoHz3DNV5Z7DurRRur8nxuyNaf6rq92GMQ==
+
+{
+    "error": {
+        "type": "invalid_request_error",
+        "message": "退款时间超出渠道 cnp_u 允许的最晚退款时间",
+        "param": "Refund_time"
+    }
+}
