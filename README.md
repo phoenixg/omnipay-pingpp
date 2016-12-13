@@ -6,7 +6,7 @@
 
 ## Ready
 
-```
+```php
 require './vendor/autoload.php';
 
 use Omnipay\Omnipay;
@@ -21,7 +21,7 @@ $channel = Channels::ALIPAY_WAP;
 
 ## Usage
 
-```
+```php
 try {
     /**
      * @var $gateway \Omnipay\Pingpp\Gateway
