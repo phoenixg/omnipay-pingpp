@@ -10,72 +10,9 @@
  */
 
 
-require './vendor/autoload.php';
-
-date_default_timezone_set('Asia/Shanghai');
-
-use Omnipay\Omnipay;
-use Omnipay\Pingpp\Common\Helpers;
-use Omnipay\Pingpp\Common\Channels;
-use Omnipay\Common\Exception\RuntimeException;
-
-// 306761352@qq.com
-$skLiveKey = 'sk_test_iv5yr1HWLOqHjbjTq1KWLmD4';
-$appId = 'app_9SSaPOaDuPCKvHSy';
-$channel = Channels::ALIPAY_WAP;
 
 try {
-    /**
-     * @var $gateway \Omnipay\Pingpp\Gateway
-     */
-    $gateway = Omnipay::create('Pingpp');
-    $gateway->initialize(array(
-        'apiKey' => $skLiveKey,
-        // 'privateKey' => file_get_contents(PINGPP_ASSET_DIR.'/sample_rsa_private_key.pem')
-    ));
 
-    // // 创建 Charge
-//    $transaction = $gateway->purchase(array(
-//        'appId' => $appId,
-//        'transactionId' => Helpers::generateTransactionId(),
-//        'channel' => $channel,
-//        'channelExtraFields' => array( // optional
-//            'app_pay' => true
-//        ),
-//        'subject' => 'Here is demo subject',
-//        'body' => 'Here is demo body',
-//        'description' => 'Here is demo description', // optional
-//        'amount' => 0.01, // 0.01 RMB
-//        'currency' => 'cny',
-//        'returnUrl' => 'http://www.yourdomain.com/path/to/awesome/return.php', // optional
-//        'cancelUrl' => 'http://www.yourdomain.com/path/to/awesome/cancel.php', // optional
-//        'notifyUrl' => 'http://www.yourdomain.com/path/to/awesome/notify.php', // optional
-//        'metadata' => array('foo' => 'bar'), // optional
-//        'timeExpire' => time() + 3600, // optional
-//        'clientIp' => '127.0.0.1',
-//    ));
-//
-//    /**
-//     * @var \Omnipay\Pingpp\Message\Response $response
-//     */
-//    $response = $transaction->send();
-//    if ($response->isSuccessful()) {
-//        $reference_id = $response->getTransactionReference();
-////        echo "Transaction reference = " . $reference_id .PHP_EOL;
-//        echo json_encode($response->getData());die;
-//    } else {
-//        print_r($response->getMessage());
-//        echo PHP_EOL;
-//        echo 'fail';
-//    }
-
-    // // 查询单笔 Charge
-//    $transaction = $gateway->fetchTransaction();
-//    $transaction->setTransactionReference('ch_DaHuXHjHeX98GO84COzbfTiP');
-//    $response = $transaction->send();
-//    $data = $response->getData();
-//    echo json_encode($data);die;
-//    echo "Gateway fetchTransaction response data == <pre>" . print_r($data, true) . PHP_EOL;
 
 
     // // 查询 Charge 列表

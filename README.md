@@ -32,7 +32,7 @@ try {
         'privateKey' => file_get_contents(PINGPP_ASSET_DIR.'/sample_rsa_private_key.pem') // optional
     ));
 
-    // Create Charge
+    // 创建 Charge
     $transaction = $gateway->purchase(array(
         'appId' => $appId,
         'transactionId' => Helpers::generateTransactionId(),
@@ -65,6 +65,11 @@ try {
         echo $response->getMessage();
     }
 
+    // 查询单笔 Charge
+    $transaction = $gateway->fetchTransaction();
+    $transaction->setTransactionReference('ch_DaHuXHjHeX98GO84COzbfTiP');
+    $response = $transaction->send();
+    $data = $response->getData();
 
 } catch (Exception $e) {
     echo $e->getMessage();

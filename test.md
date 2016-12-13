@@ -42,7 +42,7 @@ The Pingpp integration is fairly straight forward. Essentially you just pass
 a `token` field through to Pingpp instead of the regular credit card data.
 
 Start by following the standard Pingpp JS guide here:
-[https://Pingpp.com/docs/tutorials/forms](https://Pingpp.com/docs/tutorials/forms)
+[https://pingxx.com/docs/tutorials/forms](https://Pingpp.com/docs/tutorials/forms)
 
 After that you will have a `PingppToken` field which will be submitted to your server.
 Simply pass this through to the gateway as `token`, instead of the usual `card` array:
