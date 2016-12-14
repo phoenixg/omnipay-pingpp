@@ -61,12 +61,12 @@ $transaction = $gateway->purchase(array(
     'description' => 'Demo description', // optional
     'amount' => 0.01,
     'currency' => 'cny',
+    'clientIp' => '127.0.0.1',
+    'timeExpire' => time() + 3600, // optional
+    'metadata' => array('foo' => 'bar'), // optional
     'returnUrl' => 'http://yourdomain.com/path/to/awesome/return.php', // optional
     'cancelUrl' => 'http://yourdomain.com/path/to/awesome/cancel.php', // optional
     'notifyUrl' => 'http://yourdomain.com/path/to/awesome/notify.php', // optional
-    'metadata' => array('foo' => 'bar'), // optional
-    'timeExpire' => time() + 3600, // optional
-    'clientIp' => '127.0.0.1',
 ));
 
 /**
