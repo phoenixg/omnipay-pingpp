@@ -15,36 +15,9 @@ try {
 
 
 
-    // // 查询 Charge 列表
-//        $transaction = $gateway->fetchTransactionList(array(
-//            'appId' => 'app_9SSaPOaDuPCKvHSy',
-//            'channel' => Channels::ALIPAY,
-//            'paid' => 0,
-//            'refunded' => 0,
-//            'createdFrom' => 1481116461,
-//            'createdTo' => 1477723630,
-//            'limit' => 2,
-//        ));
-//        $response = $transaction->send();
-//        $data = $response->getData();
-//        echo json_encode($data);die;
 
 
-    // 退款
-//    $refund = $gateway->refund(array(
-//        'amount'                   => '10.00',
-//        'transactionReference'     => 'ch_DaHuXHjHeX98GO84COzbfTiP',
-//        'description'              => 'test refund description',
-//        'metadata'                 => [],
-//    ));
-//    $response = $refund->send();
-//    if ($response->isSuccessful()) {
-//        $refund_id = $response->getTransactionReference();
-//        echo "Transaction reference = " . $refund_id . PHP_EOL;
-//    } else {
-//        print_r($response->getMessage());
-//        echo 'fail';
-//    }
+
 
 
     // // 单笔退款查询

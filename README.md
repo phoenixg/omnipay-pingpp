@@ -1,8 +1,18 @@
 # Omnipay: Pingpp
 
-## Status
+[Ping++ 官方文档](https://www.pingxx.com/api)
+
+
+## Progress
 
 开发中，预计全部完成时间，12月底
+
+## Introduction
+
+Terminology
+
+[Omnipay](http://omnipay.thephpleague.com/)
+
 
 ## Usage
 
@@ -50,11 +60,11 @@ $transaction = $gateway->purchase(array(
     'subject' => 'Here is demo subject',
     'body' => 'Here is demo body',
     'description' => 'Here is demo description', // optional
-    'amount' => 0.01, // 0.01 RMB
+    'amount' => 0.01,
     'currency' => 'cny',
-    'returnUrl' => 'http://www.yourdomain.com/path/to/awesome/return.php', // optional
-    'cancelUrl' => 'http://www.yourdomain.com/path/to/awesome/cancel.php', // optional
-    'notifyUrl' => 'http://www.yourdomain.com/path/to/awesome/notify.php', // optional
+    'returnUrl' => 'http://yourdomain.com/path/to/awesome/return.php', // optional
+    'cancelUrl' => 'http://yourdomain.com/path/to/awesome/cancel.php', // optional
+    'notifyUrl' => 'http://yourdomain.com/path/to/awesome/notify.php', // optional
     'metadata' => array('foo' => 'bar'), // optional
     'timeExpire' => time() + 3600, // optional
     'clientIp' => '127.0.0.1',
@@ -73,11 +83,38 @@ if ($response->isSuccessful()) {
 }
 ```
 
+**note:** 以下 `$response` 的方法支持同上。
+
 ### Fetch Charge (查询单笔 Charge)
 
 ```php
 $transaction = $gateway->fetchTransaction();
 $transaction->setTransactionReference('ch_DaHuXHjHeX98GO84COzbfTiP');
 $response = $transaction->send();
-$data = $response->getData();
+```
+
+### Fetch Charge List (查询 Charge 列表)
+
+```php
+$transaction = $gateway->fetchTransactionList(array(
+    'appId' => 'app_9SSaPOaDuPCKvHSy',
+    'channel' => Channels::ALIPAY,
+    'paid' => 0,
+    'refunded' => 0,
+    'createdFrom' => 1481116461,
+    'createdTo' => 1477723630,
+    'limit' => 2,
+));
+$response = $transaction->send();
+```
+
+### Refund (创建退款)
+```php
+$refund = $gateway->refund(array(
+    'amount'                   => '10.00',
+    'transactionReference'     => 'ch_DaHuXHjHeX98GO84COzbfTiP',
+    'description'              => 'test refund description',
+    'metadata'                 => [],
+));
+$response = $refund->send();
 ```
