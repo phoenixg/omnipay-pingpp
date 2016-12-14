@@ -1,22 +1,22 @@
 # Omnipay: Pingpp
 
-## Progress
-
-开发中，预计全部完成时间，12月底
-
 ## Introduction
 
 [Ping++](https://www.pingxx.com/api) 是国内领先的聚合支付服务商，集成了包括支付宝（APP、Wap、PC、即时到账、扫码、企业付款），微信（APP、公众号、红包），
-银联网关、银联企业网银、Apple Pay、QQ 钱包、易宝支付、百度钱包、京东支付、京东白条、招行一网通、分期支付
-等国内主流支付渠道。
+银联网关、银联企业网银、Apple Pay、QQ 钱包、易宝支付、百度钱包、京东支付、京东白条、招行一网通、分期支付等国内主流支付渠道。
+
+Ping++ is a leading payment integration service provider in China, including almost all mainsteam payment gateways in China, including Alipay, Wechat Pay, UnionPay, Apple Pay, QQ Wallet,
+YeePay, Baidu Wallet, JDPay, etc.
 
 [Omnipay](http://omnipay.thephpleague.com/) 是一个 PHP 支付处理库，拥有清晰一致的 API 标准和完善的单元测试，支持国内外多达数十个主流支付网关。
+
+Omnipay is a payment processing library for PHP. It has a clear and consistent API, and is fully unit tested.
 
 ## Install
 
 ## Usage
 
-### Initialize
+### Initialization
 ```php
 require './vendor/autoload.php';
 
