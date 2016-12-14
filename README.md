@@ -88,6 +88,9 @@ if ($response->isSuccessful()) {
 
 ### Fetch Charge (查询单笔 Charge)
 ```php
+/**
+ * @var \Omnipay\Pingpp\Message\FetchTransactionRequest $transaction
+ */
 $transaction = $gateway->fetchTransaction();
 $transaction->setTransactionReference('ch_DaHuXHjHeX98GO84COzbfTiP');
 $response = $transaction->send();
@@ -95,6 +98,9 @@ $response = $transaction->send();
 
 ### Fetch Charge List (查询 Charge 列表)
 ```php
+/**
+ * @var \Omnipay\Pingpp\Message\FetchTransactionListRequest $transactionList
+ */
 $transactionList = $gateway->fetchTransactionList(array(
     'appId' => $appId,
     'channel' => Channels::ALIPAY,
@@ -109,6 +115,9 @@ $response = $transactionList->send();
 
 ### Refund (创建退款)
 ```php
+/**
+ * @var \Omnipay\Pingpp\Message\RefundRequest $refund
+ */
 $refund = $gateway->refund(array(
     'amount'               => '10.00',
     'transactionReference' => 'ch_DaHuXHjHeX98GO84COzbfTiP',
@@ -132,6 +141,9 @@ $response = $refund->send();
 
 ### Fetch Refund List (查询退款列表)
 ```php
+/**
+ * @var \Omnipay\Pingpp\Message\FetchRefundListRequest $refundList
+ */
 $refundList = $gateway->fetchRefundList(array(
     'transactionReference' => 'ch_qDun9KKC0uz9G0KSGKaHKybP',
     'limit' => 2,
@@ -141,6 +153,9 @@ $response = $refundList->send();
 
 ### Batch Refund (创建批量退款)
 ```php
+/**
+ * @var \Omnipay\Pingpp\Message\BatchRefundRequest $batchRefund
+ */
 $batchRefund = $gateway->batchRefund(array(
     'app'          => $appId,
     'batchRefundReference'      => Helpers::generateBatchRefundReference(),
@@ -166,6 +181,9 @@ $response = $batchRefund->send();
 
 ### Fetch Batch Refund List (查询批量退款列表)
 ```php
+/**
+ * @var \Omnipay\Pingpp\Message\FetchBatchRefundListRequest $batchRefundList
+ */
 $batchRefundList = $gateway->fetchBatchRefundList(array(
     'appId' => $appId,
     'limit' => 2,
@@ -175,6 +193,9 @@ $response = $batchRefundList->send();
 
 ### Red Envelope (发送红包)
 ```php
+/**
+ * @var \Omnipay\Pingpp\Message\RedEnvelopeRequest $redEnvelope
+ */
 $redEnvelope = $gateway->redEnvelope(array(
     'appId' => $appId,
     'transactionId' => Helpers::generateRedEnvelopeTransactionId(),
@@ -193,13 +214,19 @@ $response = $redEnvelope->send();
 
 ### Fetch Red Envelope (查询单笔红包)
 ```php
-$redEnvelopeTransaction = $gateway->fetchRedEnvelope();
-$redEnvelopeTransaction->setTransactionReference('red_KCabLO58W5G0rX90iT0az5a9');
-$response = $redEnvelopeTransaction->send();
+/**
+ * @var \Omnipay\Pingpp\Message\FetchRedEnvelopeRequest $redEnvelopeTransaction
+ */
+$redEnvelope = $gateway->fetchRedEnvelope();
+$redEnvelope->setTransactionReference('red_KCabLO58W5G0rX90iT0az5a9');
+$response = $redEnvelope->send();
 ```
 
 ### Fetch Red Envelope List (查询红包列表)
 ```php
+/**
+ * @var \Omnipay\Pingpp\Message\FetchRedEnvelopeListRequest $redEnvelopeList
+ */
 $redEnvelopeList = $gateway->fetchRedEnvelopeList(array(
     'appId' => $appId,
     'limit' => 2,
@@ -209,6 +236,9 @@ $response = $redEnvelopeList->send();
 
 ### Transfer (创建转账)
 ```php
+/**
+ * @var \Omnipay\Pingpp\Message\TransferRequest $transfer
+ */
 $transfer = $gateway->transfer(array(
     'appId' => $appId,
     'channel' => Channels::WX_PUB, // only support "unionpay", "wx_pub" channel
@@ -227,8 +257,22 @@ $transfer = $gateway->transfer(array(
 $response = $transfer->send();
 ```
 
+### Cancel Transfer (取消转账)
+```php
+/**
+ * @var \Omnipay\Pingpp\Message\CancelTransferRequest $cancel
+ */
+$cancel = $gateway->cancelTransfer(array(
+    'transactionReference' => 'tr_0eTi1OGqr9iH0i9CePf1a9C0', // only support "unionpay" channel
+));
+$response = $cancel->send();
+```
+
 ### Fetch Transfer (查询单笔转账)
 ```php
+/**
+ * @var \Omnipay\Pingpp\Message\FetchTransferRequest $transfer
+ */
 $transfer = $gateway->fetchTransfer();
 $transfer->setTransactionReference('tr_HqbzHCvLOaL4La1ezHfDWTqH');
 $response = $transfer->send();
@@ -236,17 +280,12 @@ $response = $transfer->send();
 
 ### Fetch Transfer List (查询转账列表)
 ```php
+/**
+ * @var \Omnipay\Pingpp\Message\FetchTransferListRequest $transferList
+ */
 $transferList = $gateway->fetchTransferList(array(
     'appId' => $appId,
     'limit' => 2,
 ));
 $response = $transferList->send();
-```
-
-### Cancel Transfer (取消转账)
-```php
-$cancel = $gateway->cancelTransfer(array(
-    'transactionReference' => 'tr_0eTi1OGqr9iH0i9CePf1a9C0', // only support "unionpay" channel
-));
-$response = $cancel->send();
 ```
