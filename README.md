@@ -15,12 +15,6 @@
 
 [Omnipay](http://omnipay.thephpleague.com/) 是一个 PHP 支付处理库，拥有清晰一致的 API 标准和完善的单元测试，支持国内外多达数十个主流支付网关。
 
-## Why use omnipay-pingpp instead of official SDK?
-
-    - Because it's not only 100% compatible with official API, but also simpler, more elegant, more consistant
-    - Because it's more intergrated with official API than SDK
-    - Because it's fully tested
-
 ## Terminology
 
 `transactionId` is the Merchant’s reference to the transaction - so typically the ID of the payment record in the Merchant Site’s database. In Ping++, it's often called `order_no`.
@@ -301,3 +295,16 @@ $transferList = $gateway->fetchTransferList(array(
 ));
 $response = $transferList->send();
 ```
+
+
+## FAQ
+
+### Is it compatible with Ping++ official SDK?
+
+Yes. It's 100% compatible with official API.
+
+### Why use omnipay-pingpp instead of official SDK?
+
+- Because it's simpler, more elegant, more consistantly designed
+- Because the implementation to the official API is more covered than SDK
+- Because it's fully unit tested
