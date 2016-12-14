@@ -2,6 +2,9 @@
 
 ## Introduction
 
+Omnipay-pingpp 是 omnipay PHP 支付处理库的 Ping++ 驱动程序。
+
+
 [Ping++](https://www.pingxx.com/api) is a leading payment integration service provider in China, including almost all mainsteam payment gateways in China, eg. Alipay, Wechat Pay, UnionPay, Apple Pay, QQ Wallet,
 YeePay, Baidu Wallet, JDPay, etc.
 
@@ -11,8 +14,6 @@ Ping++ 是国内领先的聚合支付服务商，集成了包括支付宝（APP�
 [Omnipay](http://omnipay.thephpleague.com/) is a payment processing library for PHP. It has a clear and consistent API, and is fully unit tested.
 
 Omnipay 是一个 PHP 支付处理库，拥有清晰一致的 API 标准和完善的单元测试，支持国内外多达数十个主流支付网关。
-
-Omnipay-pingpp 是 omnipay PHP 支付处理库的 Ping ++ 驱动程序。
 
 ## Install
 
