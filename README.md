@@ -27,7 +27,7 @@ use Omnipay\Pingpp\Common\Channels;
 /**
  * Get key and App ID in Ping++ Dashboard: https://dashboard.pingxx.com/
  */
-$skLiveKey = 'sk_test_iv5yr1HWLOqHjbjTq1KWLmD4';
+$skLiveKey = 'sk_live_iv5yr1HWLOqHjbjTq1KWLmD4';
 $appId = 'app_9SSaPOaDuPCKvHSy';
 
 /**
@@ -41,7 +41,7 @@ try {
      */
     $gateway = Omnipay::create('Pingpp');
     $gateway->initialize(array(
-        'apiKey' => $skLiveKey,
+        'apiKey' => $skLiveKey, // if test key is passed, all transactions will happen in test mode
         'privateKey' => file_get_contents(PINGPP_ASSET_DIR.'/sample_rsa_private_key.pem') // optional, see: https://help.pingxx.com/article/123161/
     ));
 } catch (\Exception $e) {
