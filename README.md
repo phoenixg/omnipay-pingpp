@@ -1,6 +1,6 @@
 # Omnipay: Pingpp
 
-[Ping++ 官方文档](https://www.pingxx.com/api)
+
 
 
 ## Progress
@@ -9,12 +9,24 @@
 
 ## Introduction
 
-Ping++
-Omnipay
-Terminology
+[Ping++](https://www.pingxx.com/api) 是国内领先的聚合支付服务商，集成了包括支付宝（APP、Wap、PC、即时到账、扫码、企业付款），微信（APP、公众号、红包），
+银联网关、银联企业网银、Apple Pay、QQ 钱包、易宝支付、百度钱包、京东支付、京东白条、招行一网通、分期支付
+等国内主流支付渠道。
 
-[Omnipay](http://omnipay.thephpleague.com/)
+[Omnipay](http://omnipay.thephpleague.com/) 是一个 PHP 支付处理库，拥有清晰一致的 API 标准和完善的单元测试，支持国内外多达数十个主流支付网关。
 
+## Why use omnipay-pingpp instead of official SDK?
+
+    - Because it's not only 100% compatible with official API, but also simpler, more elegant, more consistant
+    - Because it's more intergrated with official API than SDK
+    - Because it's fully tested
+
+## Terminology
+
+`transactionId` is the Merchant’s reference to the transaction - so typically the ID of the payment record in the Merchant Site’s database. In Ping++, it's often called `order_no`.
+`transactionReference` is the Payment Gateway’s reference to the transaction. In Ping++, it's often called `Charge Id`, `Red Envelope Id`, `Transfer Id`.
+`returnUrl` is used by drivers when they need to tell the Payment Gateway where to redirect the customer following a transaction. Typically this is used by off-site ‘redirect’ gateway integrations. In Ping++, it's called differently by various payment channels.
+`notifyUrl` is used by drivers to tell the Payment Gateway where to send their server-to-server notification, informing the Merchant Site about the outcome of a transaction. In Ping++, it's called differently by various payment channels.
 
 ## Usage
 
@@ -49,6 +61,9 @@ try {
 
 ### Create Charge (创建 Charge)
 ```php
+/**
+ * @var \Omnipay\Pingpp\Message\PurchaseRequest $transaction
+ */
 $transaction = $gateway->purchase(array(
     'appId' => $appId,
     'transactionId' => Helpers::generateTransactionId(),
@@ -70,6 +85,7 @@ $transaction = $gateway->purchase(array(
 ));
 
 /**
+ * 以下 $response 的方法支持同上
  * @var \Omnipay\Pingpp\Message\Response $response
  */
 $response = $transaction->send();
@@ -81,10 +97,6 @@ if ($response->isSuccessful()) {
     echo $response->getMessage();
 }
 ```
-
-**note:**
-- 以下 `$response` 的方法支持同上。
-- 所有渠道的回调URL都被归纳为 `returnUrl`,`cancelUrl`,`notifyUrl` 3种，符合 Omnipay 支持的各类网关抽象标准。
 
 ### Fetch Charge (查询单笔 Charge)
 ```php
