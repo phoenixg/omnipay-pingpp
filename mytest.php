@@ -15,45 +15,6 @@ try {
 
 
 
-    // 创建批量退款
-//    $batchRefund = $gateway->batchRefund(array(
-//        'app'          => $appId,
-//        'batchRefundReference'      => Helpers::generateBatchRefundReference(),
-//        'chargeIdList' => array(
-//            'ch_L8qn10mLmr1GS8e5OODmHaL4',
-//            'ch_fdOmHaLmLmr1GOD4qn1dS8e5',
-//        ),
-//        'description'  => 'Batch refund description.', // optional
-//        'metadata'     => array( // optional
-//            'foo' => 'bar'
-//        ),
-//    ));
-//    $response = $batchRefund->send();
-//    if ($response->isSuccessful()) {
-//        echo $response->getData();
-//    } else {
-//        print_r($response->getMessage());
-//        echo 'fail';
-//    }
-
-    // // 查询单个批量退款批次号
-    /**
-     * @var \Omnipay\Pingpp\Message\FetchBatchRefundRequest $batchRefund
-     */
-//    $batchRefund = $gateway->fetchBatchRefund();
-//    $batchRefund->setBatchRefundReference('batch_refund_20160801001');
-//    $response = $batchRefund->send();
-//    $data = $response->getData();
-//    echo json_encode($data);die;
-
-    // 查询批量退款列表
-//    $batchRefundList = $gateway->fetchBatchRefundList(array(
-//        'appId' => $appId,
-//        'limit' => 2,
-//    ));
-//    $response = $batchRefundList->send();
-//    $data = $response->getData();
-//    echo json_encode($data);die;
 
     // 发送红包
 //    $redEnvelope = $gateway->redEnvelope(array(

@@ -17,7 +17,6 @@ Terminology
 ## Usage
 
 ### Preparation
-
 ```php
 require './vendor/autoload.php';
 
@@ -31,7 +30,6 @@ $channel = Channels::ALIPAY_WAP;
 ```
 
 ## Initialize
-
 ```php
 try {
     /**
@@ -48,7 +46,6 @@ try {
 ```
 
 ### Create Charge (创建 Charge)
-
 ```php
 $transaction = $gateway->purchase(array(
     'appId' => $appId,
@@ -57,9 +54,9 @@ $transaction = $gateway->purchase(array(
     'channelExtraFields' => array( // optional
         'app_pay' => true
     ),
-    'subject' => 'Here is demo subject',
-    'body' => 'Here is demo body',
-    'description' => 'Here is demo description', // optional
+    'subject' => 'Demo subject',
+    'body' => 'Demo body',
+    'description' => 'Demo description', // optional
     'amount' => 0.01,
     'currency' => 'cny',
     'returnUrl' => 'http://yourdomain.com/path/to/awesome/return.php', // optional
@@ -88,7 +85,6 @@ if ($response->isSuccessful()) {
 - 所有渠道的回调URL都被归纳为 `returnUrl`,`cancelUrl`,`notifyUrl` 3种，符合 Omnipay 支持的各类网关抽象标准。
 
 ### Fetch Charge (查询单笔 Charge)
-
 ```php
 $transaction = $gateway->fetchTransaction();
 $transaction->setTransactionReference('ch_DaHuXHjHeX98GO84COzbfTiP');
@@ -96,7 +92,6 @@ $response = $transaction->send();
 ```
 
 ### Fetch Charge List (查询 Charge 列表)
-
 ```php
 $transactionList = $gateway->fetchTransactionList(array(
     'appId' => $appId,
@@ -113,10 +108,10 @@ $response = $transactionList->send();
 ### Refund (创建退款)
 ```php
 $refund = $gateway->refund(array(
-    'amount'                   => '10.00',
-    'transactionReference'     => 'ch_DaHuXHjHeX98GO84COzbfTiP',
-    'description'              => 'Test refund description',
-    'metadata'                 => [], // optional
+    'amount'               => '10.00',
+    'transactionReference' => 'ch_DaHuXHjHeX98GO84COzbfTiP',
+    'description'          => 'Demo refund description',
+    'metadata'             => array('foo' => 'bar'), // optional
 ));
 $response = $refund->send();
 ```
@@ -141,3 +136,38 @@ $refundList = $gateway->fetchRefundList(array(
 ));
 $response = $refundList->send();
 ```
+
+### Batch Refund (创建批量退款)
+```php
+$batchRefund = $gateway->batchRefund(array(
+    'app'          => $appId,
+    'batchRefundReference'      => Helpers::generateBatchRefundReference(),
+    'chargeIdList' => array(
+        'ch_L8qn10mLmr1GS8e5OODmHaL4',
+        'ch_fdOmHaLmLmr1GOD4qn1dS8e5',
+    ),
+    'description'  => 'Demo batch refund description.', // optional
+    'metadata'     => array('foo' => 'bar'), // optional
+));
+$response = $batchRefund->send();
+```
+
+### Fetch Batch Refund (查询单个批量退款批次号)
+```php
+/**
+ * @var \Omnipay\Pingpp\Message\FetchBatchRefundRequest $batchRefund
+ */
+$batchRefund = $gateway->fetchBatchRefund();
+$batchRefund->setBatchRefundReference('batch_refund_20160801001');
+$response = $batchRefund->send();
+```
+
+### Fetch Batch Refund List (查询批量退款列表)
+```php
+$batchRefundList = $gateway->fetchBatchRefundList(array(
+    'appId' => $appId,
+    'limit' => 2,
+));
+$response = $batchRefundList->send();
+```
+
