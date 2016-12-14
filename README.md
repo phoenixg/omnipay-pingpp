@@ -42,7 +42,7 @@ And run composer to update your dependencies:
 
 The following gateways are provided by this package:
 
-* [Pingpp](https://www.pingxx.com/)
+* Pingpp
 
 For general usage instructions, please see the main [Omnipay](https://github.com/thephpleague/omnipay)
 repository.
