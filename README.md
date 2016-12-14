@@ -132,7 +132,7 @@ $response = $refund->send();
  */
 $refund = $gateway->fetchRefund(array(
     'transactionReference' => 'ch_qDun9KKC0uz9G0KSGKaHKybP',
-    'refundReference' => 're_Ouz5GSfv1Gm1S4WzTCaXXPSK_',
+    'refundReference' => 're_Ouz5GSfv1Gm1S4WzTCaXXPSKs',
 ));
 $response = $refund->send();
 ```
