@@ -16,7 +16,7 @@
 
 ## Usage
 
-### Preparation
+### Initialize
 ```php
 require './vendor/autoload.php';
 
@@ -24,13 +24,17 @@ use Omnipay\Omnipay;
 use Omnipay\Pingpp\Common\Helpers;
 use Omnipay\Pingpp\Common\Channels;
 
+/**
+ * Get key and App ID in Ping++ Dashboard: https://dashboard.pingxx.com/
+ */
 $skLiveKey = 'sk_test_iv5yr1HWLOqHjbjTq1KWLmD4';
 $appId = 'app_9SSaPOaDuPCKvHSy';
-$channel = Channels::ALIPAY_WAP;
-```
 
-## Initialize
-```php
+/**
+ * The payment channel you have configured in Ping++
+ */
+$channel = Channels::ALIPAY_WAP;
+
 try {
     /**
      * @var $gateway \Omnipay\Pingpp\Gateway
@@ -38,7 +42,7 @@ try {
     $gateway = Omnipay::create('Pingpp');
     $gateway->initialize(array(
         'apiKey' => $skLiveKey,
-        'privateKey' => file_get_contents(PINGPP_ASSET_DIR.'/sample_rsa_private_key.pem') // optional
+        'privateKey' => file_get_contents(PINGPP_ASSET_DIR.'/sample_rsa_private_key.pem') // optional, see: https://help.pingxx.com/article/123161/
     ));
 } catch (\Exception $e) {
     echo $e->getMessage();
