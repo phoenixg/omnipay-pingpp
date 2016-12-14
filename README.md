@@ -83,7 +83,9 @@ if ($response->isSuccessful()) {
 }
 ```
 
-**note:** 以下 `$response` 的方法支持同上。
+**note:**
+- 以下 `$response` 的方法支持同上。
+- 所有渠道的回调URL都被归纳为 `returnUrl`,`cancelUrl`,`notifyUrl` 3种，符合 Omnipay 支持的各类网关抽象标准。
 
 ### Fetch Charge (查询单笔 Charge)
 
