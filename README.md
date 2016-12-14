@@ -2,22 +2,50 @@
 
 ## Introduction
 
-Omnipay-pingpp 是 omnipay PHP 支付处理库的 Ping++ 驱动程序。
+**Ping++ driver for the Omnipay PHP payment processing library**
+
+**Omnipay PHP 支付处理库的 Ping++ 驱动程序。**
 
 
-[Ping++](https://www.pingxx.com/api) is a leading payment integration service provider in China, including almost all mainsteam payment gateways in China, eg. Alipay, Wechat Pay, UnionPay, Apple Pay, QQ Wallet,
-YeePay, Baidu Wallet, JDPay, etc.
+[Ping++](https://www.pingxx.com/api) is a leading payment integration service provider in China,
+including almost all mainsteam payment gateways in China, eg. Alipay, Wechat Pay, UnionPay,
+Apple Pay, QQ Wallet, YeePay, Baidu Wallet, JDPay, etc.
 
 Ping++ 是国内领先的聚合支付服务商，集成了包括支付宝（APP、Wap、PC、即时到账、扫码、企业付款），微信（APP、公众号、红包），
 银联网关、银联企业网银、Apple Pay、QQ 钱包、易宝支付、百度钱包、京东支付、京东白条、招行一网通、分期支付等国内主流支付渠道。
 
-[Omnipay](http://omnipay.thephpleague.com/) is a payment processing library for PHP. It has a clear and consistent API, and is fully unit tested.
+
+[Omnipay](http://omnipay.thephpleague.com/) is a framework agnostic, multi-gateway payment processing library for PHP.
+It has a clear and consistent API, and is fully unit tested. This package implements Ping++ support for Omnipay.
 
 Omnipay 是一个 PHP 支付处理库，拥有清晰一致的 API 标准和完善的单元测试，支持国内外多达数十个主流支付网关。
 
-## Install
+## Installation
 
-## Usage
+Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply add it
+to your `composer.json` file:
+
+```json
+{
+    "require": {
+        "omnipay/Pingpp": "~1.0"
+    }
+}
+```
+
+And run composer to update your dependencies:
+
+    $ curl -s http://getcomposer.org/installer | php
+    $ php composer.phar update
+
+## Basic Usage
+
+The following gateways are provided by this package:
+
+* [Pingpp](https://www.pingxx.com/)
+
+For general usage instructions, please see the main [Omnipay](https://github.com/thephpleague/omnipay)
+repository.
 
 ### Initialization
 ```php
@@ -316,3 +344,12 @@ Yes. It's 100% compatible with official API.
 - `transactionReference` is the Payment Gateway’s reference to the transaction. In Ping++, it's often called `Charge Id`, `Red Envelope Id`, `Transfer Id`.
 - `returnUrl` is used by drivers when they need to tell the Payment Gateway where to redirect the customer following a transaction. Typically this is used by off-site ‘redirect’ gateway integrations. In Ping++, it's called differently by various payment channels.
 - `notifyUrl` is used by drivers to tell the Payment Gateway where to send their server-to-server notification, informing the Merchant Site about the outcome of a transaction. In Ping++, it's called differently by various payment channels.
+
+## Support
+
+If you are having general issues with Omnipay, we suggest posting on
+[Stack Overflow](http://stackoverflow.com/). Be sure to add the
+[omnipay tag](http://stackoverflow.com/questions/tagged/omnipay) so it can be easily found.
+
+If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/phoenixg/omnipay-pingpp/issues),
+or better yet, fork the library and submit a pull request.
