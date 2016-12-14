@@ -1,8 +1,5 @@
 # Omnipay: Pingpp
 
-
-
-
 ## Progress
 
 开发中，预计全部完成时间，12月底
@@ -15,12 +12,7 @@
 
 [Omnipay](http://omnipay.thephpleague.com/) 是一个 PHP 支付处理库，拥有清晰一致的 API 标准和完善的单元测试，支持国内外多达数十个主流支付网关。
 
-## Terminology
-
-`transactionId` is the Merchant’s reference to the transaction - so typically the ID of the payment record in the Merchant Site’s database. In Ping++, it's often called `order_no`.
-`transactionReference` is the Payment Gateway’s reference to the transaction. In Ping++, it's often called `Charge Id`, `Red Envelope Id`, `Transfer Id`.
-`returnUrl` is used by drivers when they need to tell the Payment Gateway where to redirect the customer following a transaction. Typically this is used by off-site ‘redirect’ gateway integrations. In Ping++, it's called differently by various payment channels.
-`notifyUrl` is used by drivers to tell the Payment Gateway where to send their server-to-server notification, informing the Merchant Site about the outcome of a transaction. In Ping++, it's called differently by various payment channels.
+## Install
 
 ## Usage
 
@@ -308,3 +300,10 @@ Yes. It's 100% compatible with official API.
 - Because it's simpler, more elegant, more consistantly designed
 - Because the implementation to the official API is more covered than SDK
 - Because it's fully unit tested
+
+## Terminology
+
+- `transactionId` is the Merchant’s reference to the transaction - so typically the ID of the payment record in the Merchant Site’s database. In Ping++, it's often called `order_no`.
+- `transactionReference` is the Payment Gateway’s reference to the transaction. In Ping++, it's often called `Charge Id`, `Red Envelope Id`, `Transfer Id`.
+- `returnUrl` is used by drivers when they need to tell the Payment Gateway where to redirect the customer following a transaction. Typically this is used by off-site ‘redirect’ gateway integrations. In Ping++, it's called differently by various payment channels.
+- `notifyUrl` is used by drivers to tell the Payment Gateway where to send their server-to-server notification, informing the Merchant Site about the outcome of a transaction. In Ping++, it's called differently by various payment channels.
