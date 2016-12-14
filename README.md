@@ -12,6 +12,8 @@ Ping++ 是国内领先的聚合支付服务商，集成了包括支付宝（APP�
 
 Omnipay 是一个 PHP 支付处理库，拥有清晰一致的 API 标准和完善的单元测试，支持国内外多达数十个主流支付网关。
 
+Omnipay-pingpp 是 omnipay PHP 支付处理库的 Ping ++ 驱动程序。
+
 ## Install
 
 ## Usage
@@ -301,8 +303,11 @@ Yes. It's 100% compatible with official API.
 ### Why use omnipay-pingpp instead of official SDK?
 
 - Because it's simpler, more elegant, more consistantly designed
+  简单，优雅，一致的设计
 - Because the implementation to the official API is more covered than SDK
+  对官方 API 的实现比 SDK 覆盖更多
 - Because it's fully unit tested
+  完全的单元测试
 
 ## Terminology
 
