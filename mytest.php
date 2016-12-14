@@ -5,7 +5,7 @@
 @time: 上午11:57
  *
     // 100%完全兼容，更为优雅（处理 success url) 的sdk替代 ，更为健壮（unit test)，国际化, 更科学的传参设计
-    // why and when?  一键从 stripe 切换
+    // why and when?  一键从 stripe 切换，命名更为一致
     // 承诺保持升级
  */
 
@@ -13,35 +13,6 @@
 
 try {
 
-
-
-
-
-
-
-
-    // // 单笔退款查询
-    /**
-     * @var \Omnipay\Pingpp\Message\FetchRefundRequest $refund
-     */
-//    $refund = $gateway->fetchRefund(array(
-//        'transactionReference' => 'ch_qDun9KKC0uz9G0KSGKaHKybP',
-//        'refundReference' => 're_Ouz5GSfv1Gm1S4WzTCaXXPSK_',
-//    ));
-//    // $refund->setTransactionReference('ch_qDun9KKC0uz9G0KSGKaHKybP');
-//    // $refund->setRefundReference('re_Ouz5GSfv1Gm1S4WzTCaXXPSK_');
-//    $response = $refund->send();
-//    $data = $response->getData();
-//    echo json_encode($data);die;
-
-    // 查询退款列表
-//    $refundList = $gateway->fetchRefundList(array(
-//        'transactionReference' => 'ch_qDun9KKC0uz9G0KSGKaHKybP',
-//        'limit' => 2,
-//    ));
-//    $response = $refundList->send();
-//    $data = $response->getData();
-//    echo json_encode($data);die;
 
 
     // 创建批量退款

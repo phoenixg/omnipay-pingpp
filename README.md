@@ -96,8 +96,8 @@ $response = $transaction->send();
 ### Fetch Charge List (查询 Charge 列表)
 
 ```php
-$transaction = $gateway->fetchTransactionList(array(
-    'appId' => 'app_9SSaPOaDuPCKvHSy',
+$transactionList = $gateway->fetchTransactionList(array(
+    'appId' => $appId,
     'channel' => Channels::ALIPAY,
     'paid' => 0,
     'refunded' => 0,
@@ -105,7 +105,7 @@ $transaction = $gateway->fetchTransactionList(array(
     'createdTo' => 1477723630,
     'limit' => 2,
 ));
-$response = $transaction->send();
+$response = $transactionList->send();
 ```
 
 ### Refund (创建退款)
@@ -113,8 +113,29 @@ $response = $transaction->send();
 $refund = $gateway->refund(array(
     'amount'                   => '10.00',
     'transactionReference'     => 'ch_DaHuXHjHeX98GO84COzbfTiP',
-    'description'              => 'test refund description',
-    'metadata'                 => [],
+    'description'              => 'Test refund description',
+    'metadata'                 => [], // optional
 ));
 $response = $refund->send();
+```
+
+### Fetch Refund (查询单笔退款)
+```php
+/**
+ * @var \Omnipay\Pingpp\Message\FetchRefundRequest $refund
+ */
+$refund = $gateway->fetchRefund(array(
+    'transactionReference' => 'ch_qDun9KKC0uz9G0KSGKaHKybP',
+    'refundReference' => 're_Ouz5GSfv1Gm1S4WzTCaXXPSK_',
+));
+$response = $refund->send();
+```
+
+### Fetch Refund List (查询退款列表)
+```php
+$refundList = $gateway->fetchRefundList(array(
+    'transactionReference' => 'ch_qDun9KKC0uz9G0KSGKaHKybP',
+    'limit' => 2,
+));
+$response = $refundList->send();
 ```
