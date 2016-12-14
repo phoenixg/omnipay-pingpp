@@ -260,9 +260,8 @@ $response = $transfer->send();
 /**
  * @var \Omnipay\Pingpp\Message\CancelTransferRequest $cancel
  */
-$cancel = $gateway->cancelTransfer(array(
-    'transactionReference' => 'tr_0eTi1OGqr9iH0i9CePf1a9C0', // only support "unionpay" channel
-));
+$cancel = $gateway->cancelTransfer();
+$cancel->setTransactionReference('tr_0eTi1OGqr9iH0i9CePf1a9C0'); // only support "unionpay" channel
 $response = $cancel->send();
 ```
 
