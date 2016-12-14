@@ -9,6 +9,8 @@
 
 ## Introduction
 
+Ping++
+Omnipay
 Terminology
 
 [Omnipay](http://omnipay.thephpleague.com/)
@@ -171,3 +173,80 @@ $batchRefundList = $gateway->fetchBatchRefundList(array(
 $response = $batchRefundList->send();
 ```
 
+### Red Envelope (发送红包)
+```php
+$redEnvelope = $gateway->redEnvelope(array(
+    'appId' => $appId,
+    'transactionId' => Helpers::generateRedEnvelopeTransactionId(),
+    'channel'     => Channels::WX, // only support "wx", "wx_pub" channel
+    'subject' => 'Demo subject',
+    'body' => 'Demo body',
+    'description' => 'Demo description', // optional
+    'amount' => 0.01,
+    'currency' => 'cny',
+    'sender' =>  'Sender Name', // merchant name
+    'receiver' => 'Wechat Openid',
+    'metadata' => array('foo' => 'bar'), // optional
+));
+$response = $redEnvelope->send();
+```
+
+### Fetch Red Envelope (查询单笔红包)
+```php
+$redEnvelopeTransaction = $gateway->fetchRedEnvelope();
+$redEnvelopeTransaction->setTransactionReference('red_KCabLO58W5G0rX90iT0az5a9');
+$response = $redEnvelopeTransaction->send();
+```
+
+### Fetch Red Envelope List (查询红包列表)
+```php
+$redEnvelopeList = $gateway->fetchRedEnvelopeList(array(
+    'appId' => $appId,
+    'limit' => 2,
+));
+$response = $redEnvelopeList->send();
+```
+
+### Transfer (创建转账)
+```php
+$transfer = $gateway->transfer(array(
+    'appId' => $appId,
+    'channel' => Channels::WX_PUB, // only support "unionpay", "wx_pub" channel
+    'channelExtraFields' => array( // optional, different by channel
+        'user_name' => 'User Name',
+        'force_check' => true
+    ),
+    'transactionId' => Helpers::generateTransferTransactionId(Channels::WX_PUB),
+    'description' => 'Demo description',
+    'amount' => 0.01,
+    'currency' => 'cny',
+    'type' => 'b2c',
+    'receiver' => 'Wechat Openid', // optional, different by channel
+    'metadata' => array('foo' => 'bar'), // optional
+));
+$response = $transfer->send();
+```
+
+### Fetch Transfer (查询单笔转账)
+```php
+$transfer = $gateway->fetchTransfer();
+$transfer->setTransactionReference('tr_HqbzHCvLOaL4La1ezHfDWTqH');
+$response = $transfer->send();
+```
+
+### Fetch Transfer List (查询转账列表)
+```php
+$transferList = $gateway->fetchTransferList(array(
+    'appId' => $appId,
+    'limit' => 2,
+));
+$response = $transferList->send();
+```
+
+### Cancel Transfer (取消转账)
+```php
+$cancel = $gateway->cancelTransfer(array(
+    'transactionReference' => 'tr_0eTi1OGqr9iH0i9CePf1a9C0', // only support "unionpay" channel
+));
+$response = $cancel->send();
+```
