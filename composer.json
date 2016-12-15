@@ -1,7 +1,7 @@
 {
-    "name": "omnipay/pingpp",
+    "name": "phoenixg/omnipay-pingpp",
     "type": "library",
-    "description": "Pingpp driver for the Omnipay payment processing library",
+    "description": "A Ping++ driver for the Omnipay PHP payment processing library. 一个支持支付宝（APP、Wap、PC、即时到账、扫码、企业付款），微信（APP、公众号、红包）， 银联网关、银联企业网银、Apple Pay、QQ 钱包、易宝支付、百度钱包、京东支付、京东白条、招行一网通、分期支付等国内主流支付渠道的聚合支付网关",
     "keywords": [
         "gateway",
         "merchant",
@@ -10,14 +10,16 @@
         "payment",
         "pingpp",
         "ping++",
-        "pingplusplus"
+        "pingplusplus",
+        "聚合支付",
+        "支付"
     ],
-    "homepage": "https://git.pingxx.com/phoenixg/omnipay-pingpp",
+    "homepage": "https://github.com/phoenixg/omnipay-pingpp",
     "license": "MIT",
     "authors": [
         {
             "name": "Huang Feng",
-            "email": "phoenixg@pingxx.com"
+            "email": "306761352@qq.com"
         }
     ],
     "autoload": {
