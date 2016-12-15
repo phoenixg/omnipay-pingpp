@@ -6,7 +6,7 @@
 
 
 [Ping++](https://www.pingxx.com/api) is a leading payment integration service provider in China,
-including almost all mainsteam payment gateways in China, eg. Alipay, Wechat Pay, UnionPay,
+support most Chinese mainsteam payment gateways, eg. Alipay, Wechat Pay, UnionPay,
 Apple Pay, QQ Wallet, YeePay, Baidu Wallet, JDPay, etc.
 
 [Omnipay](http://omnipay.thephpleague.com/) is a framework agnostic, multi-gateway payment processing library for PHP.
@@ -321,7 +321,7 @@ $response = $transferList->send();
 
 Yes. It's 100% compatible with official API.
 
-### Why use omnipay-pingpp instead of official SDK?
+### Why use omnipay-pingpp instead of Ping++ official SDK?
 
 - Because it's simpler, more elegant, more consistantly designed
   简单，优雅，一致的设计
@@ -329,6 +329,9 @@ Yes. It's 100% compatible with official API.
   对官方 API 的实现比 SDK 覆盖更多
 - Because it's fully unit tested
   完全的单元测试
+- Because it's easier to switch between Chinese and other payment gateways (like Paypal) if you're running global business
+  国内国外支付网关的切换变得一致和流畅
+
 
 ## Terminology
 
