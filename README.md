@@ -5,7 +5,7 @@
 **Ping++ driver for the Omnipay PHP payment processing library**
 
 
-[Ping++](https://www.pingxx.com/api) is a leading payment integration service provider,
+[Ping++](https://www.pingxx.com/api) is a Chinese leading payment integration service provider,
 which support various mainstream payment gateways in China, eg. Alipay, Wechat Pay, UnionPay,
 Apple Pay, QQ Wallet, YeePay, Baidu Wallet, JDPay, etc.
 
