@@ -20,7 +20,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "omnipay/Pingpp": "~1.0"  -> todo
+        "omnipay/Pingpp": "dev-master"
     }
 }
 ```
