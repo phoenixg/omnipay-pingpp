@@ -6,7 +6,7 @@
 
 
 [Ping++](https://www.pingxx.com/api) is a leading payment integration service provider in China,
-support most Chinese mainsteam payment gateways, eg. Alipay, Wechat Pay, UnionPay,
+which support most Chinese mainsteam payment gateways, eg. Alipay, Wechat Pay, UnionPay,
 Apple Pay, QQ Wallet, YeePay, Baidu Wallet, JDPay, etc.
 
 [Omnipay](http://omnipay.thephpleague.com/) is a framework agnostic, multi-gateway payment processing library for PHP.
