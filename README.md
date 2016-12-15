@@ -20,7 +20,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "omnipay/Pingpp": "dev-master"
+        "phoenixg/omnipay-pingpp": "dev-master"
     }
 }
 ```
