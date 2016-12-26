@@ -195,7 +195,7 @@ class Gateway extends AbstractGateway
      */
     public function batchRefund(array $parameters = array())
     {
-        return $this->createRequest(\Omnipay\Pingpp\Message\BatchRefundRequestTest::class, $parameters);
+        return $this->createRequest(\Omnipay\Pingpp\Message\BatchRefundRequest::class, $parameters);
     }
 
     /**
