@@ -45,6 +45,20 @@ class Helpers
     }
 
     /**
+     * 生成兼容 Ping++ 批量转账接口要求的批量转账批次号
+     *
+     * A batch transfer reference id generator compatible with
+     * all Ping++ supported payment channels
+     *
+     * @link https://www.pingxx.com/api#创建-batch-transfer-对象
+     * @return string
+     */
+    public static function generateBatchTransferReference()
+    {
+        return (string) 'batch_no_'.date('YmdHis').rand(0,9);
+    }
+
+    /**
      * 生成兼容 Ping++ 红包接口要求的商户交易流水号
      *
      * A merchant transaction id generator compatible with

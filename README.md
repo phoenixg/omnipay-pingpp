@@ -314,6 +314,38 @@ $transferList = $gateway->fetchTransferList(array(
 $response = $transferList->send();
 ```
 
+### Batch Transfer (创建批量转账)
+```php
+/**
+ * @var \Omnipay\Pingpp\Message\BatchTransferRequest $batchTransfer
+ */
+$batchTransfer = $gateway->batchTransfer(array(
+    'app' => $appId,
+    'batchTransferReference' => Helpers::generateBatchTransferReference(),
+    'recipients' => array(
+        array(
+            'account' => 'alipay account for receiver',
+            'amount' => 0.01,
+            'name' => 'receiver name A',
+            'description' => '', // optional
+        ),
+        array(
+            'account' => 'alipay account for receiver',
+            'amount' => 0.01,
+            'name' => 'receiver name B',
+            'description' => '', // optional
+        }
+    ),
+    'channel' => Channels::ALIPAY, // only support "alipay", "unionpay" channel
+    'amount' => 0.02,
+    'description'  => 'Demo batch transfer description.',
+    'currency' => 'cny',
+    'type' => 'b2c',
+    'metadata'     => array('foo' => 'bar'), // optional
+));
+$response = $batchTransfer->send();
+```
+
 
 ## FAQ
 
