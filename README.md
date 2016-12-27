@@ -346,6 +346,15 @@ $batchTransfer = $gateway->batchTransfer(array(
 $response = $batchTransfer->send();
 ```
 
+### Fetch Batch Transfer (查询单个批量转账批次号)
+```php
+/**
+ * @var \Omnipay\Pingpp\Message\FetchBatchTransferRequest $batchTransfer
+ */
+$batchTransfer = $gateway->fetchBatchTransfer();
+$batchTransfer->setBatchTransferReference('batch_no_20160801001');
+$response = $batchTransfer->send();
+```
 
 ## FAQ
 
