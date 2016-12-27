@@ -1,17 +1,17 @@
 <?php
 
 /**
- * Pingpp Cancel Transfer Request.
+ * Pingpp Cancel Batch Transfer Request.
  */
 namespace Omnipay\Pingpp\Message;
 
 /**
- * Pingpp Cancel Transfer Request.
+ * Pingpp Cancel Batch Transfer Request.
  *
- * @link https://www.pingxx.com/api#更新-transfer对象
+ * @link https://www.pingxx.com/api#更新批量企业付款（银行卡）-batch-transfer-对象
  * @package Omnipay\Pingpp\Message
  */
-class CancelTransferRequest extends AbstractRequest
+class CancelBatchTransferRequest extends AbstractRequest
 {
     /**
      * @return array
@@ -38,6 +38,6 @@ class CancelTransferRequest extends AbstractRequest
 
     public function getHttpMethod()
     {
-        return 'PUT';
+        return 'POST';
     }
 }

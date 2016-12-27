@@ -356,6 +356,16 @@ $batchTransfer->setBatchTransferReference('batch_no_20160801001');
 $response = $batchTransfer->send();
 ```
 
+### Cancel Batch Transfer (取消批量转账)
+```php
+/**
+ * @var \Omnipay\Pingpp\Message\CancelBatchTransferRequest $cancel
+ */
+$cancel = $gateway->cancelBatchTransfer();
+$cancel->setTransactionReference('181610101014367590');
+$response = $cancel->send();
+```
+
 ## FAQ
 
 ### Is it compatible with Ping++ official SDK?

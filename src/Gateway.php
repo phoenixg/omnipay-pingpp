@@ -329,4 +329,16 @@ class Gateway extends AbstractGateway
         return $this->createRequest(\Omnipay\Pingpp\Message\FetchBatchTransferRequest::class, $parameters);
     }
 
+    /**
+     * Cancel Batch Transfer Request.
+     *
+     * @param array $parameters
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function cancelBatchTransfer(array $parameters = array())
+    {
+        return $this->createRequest(\Omnipay\Pingpp\Message\CancelBatchTransferRequest::class, $parameters);
+    }
+
+
 }
