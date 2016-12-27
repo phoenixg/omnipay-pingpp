@@ -370,6 +370,16 @@ $cancel->setTransactionReference('batch_no_20160801001');
 $response = $cancel->send();
 ```
 
+### Fetch Event (查询Event事件)
+```php
+/**
+ * @var \Omnipay\Pingpp\Message\FetchEventRequest $event
+ */
+$event = $gateway->fetchEvent();
+$event->setEventReference('evt_lqVSy5gbL0A68pS8YKvJzdWZ');
+$response = $event->send();
+```
+
 ## pingpp.js
 
 The minimum integration for PC payment is simple, first you need to load [pingpp.js](https://github.com/PingPlusPlus/pingpp-js/blob/master/dist/pingpp.js) , 
