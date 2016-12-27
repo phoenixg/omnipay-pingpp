@@ -370,7 +370,7 @@ $cancel->setTransactionReference('batch_no_20160801001');
 $response = $cancel->send();
 ```
 
-### Fetch Event (查询Event事件)
+### Fetch Event (查询 Event 事件)
 ```php
 /**
  * @var \Omnipay\Pingpp\Message\FetchEventRequest $event
@@ -378,6 +378,27 @@ $response = $cancel->send();
 $event = $gateway->fetchEvent();
 $event->setEventReference('evt_lqVSy5gbL0A68pS8YKvJzdWZ');
 $response = $event->send();
+```
+
+## Webhooks
+
+To configure your webhooks URL, simply login Ping++ Dashboard, for more information, check out: [docs](https://www.pingxx.com/docs/webhooks/webhooks)
+
+Code below shows how you can verify whether the webhooks you receive is sent by Ping++:
+
+```php
+// Retrieve signature in header
+$signature = $headers['X-Pingplusplus-Signature'] ?: null;
+
+// Get the Ping++ RSA Public Key in Dashboard
+$pub_key_contents = file_get_contents(__DIR__ . "/pingpp_rsa_public_key.pem");
+
+if (openssl_verify(file_get_contents('php://input'), base64_decode($signature), $pub_key_contents, 'sha256')) {
+    // Congrats! This request is from Ping++
+    exit;
+} 
+
+http_response_code(400);
 ```
 
 ## pingpp.js
