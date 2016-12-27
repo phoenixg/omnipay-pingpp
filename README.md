@@ -364,14 +364,15 @@ Yes. It's 100% compatible with official API.
 
 ### Why use omnipay-pingpp instead of Ping++ official SDK?
 
-- Because it's simpler, more elegant, more consistantly designed
+- It's simpler, more elegant, more consistantly designed
   简单，优雅，一致的设计
-- Because the implementation to the official API is more covered than SDK
+- The implementation to the official API is more covered than SDK
   对官方 API 的实现比 SDK 覆盖更多
-- Because it's fully unit tested
+- It's fully unit tested
   完全的单元测试
-- Because it's easier to switch between Chinese and other payment gateways (like Paypal) if you're running global business
+- It's easier to switch between Chinese and other payment gateways (like Paypal) if you're running global business
   国内国外支付网关的切换变得一致和流畅
+- 你需要一个聚合了国内主流渠道的支付网关，并且希望它遵循一套合理的标准
 
 
 ## Terminology
