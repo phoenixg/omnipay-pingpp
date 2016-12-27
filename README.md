@@ -362,7 +362,7 @@ $response = $batchTransfer->send();
  * @var \Omnipay\Pingpp\Message\CancelBatchTransferRequest $cancel
  */
 $cancel = $gateway->cancelBatchTransfer();
-$cancel->setTransactionReference('181610101014367590');
+$cancel->setTransactionReference('batch_no_20160801001');
 $response = $cancel->send();
 ```
 
