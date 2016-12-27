@@ -24,7 +24,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "phoenixg/omnipay-pingpp": "dev-master"
+        "phoenixg/omnipay-pingpp": "^1.0"
     }
 }
 ```
