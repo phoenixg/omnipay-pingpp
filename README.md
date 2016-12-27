@@ -366,6 +366,54 @@ $cancel->setTransactionReference('batch_no_20160801001');
 $response = $cancel->send();
 ```
 
+## pingpp.js
+
+The minimum integration for PC payment is simple, first you need to load [pingpp.js](https://github.com/PingPlusPlus/pingpp-js/blob/master/dist/pingpp.js) , 
+then test with code below:
+
+```html
+<div class="app">
+    <label><input id="amount" type="text" placeholder="金 额"/></label>
+    <span class="up" onclick="wap_pay('upacp_pc')">银联网页支付</span>
+    <span class="up" onclick="wap_pay('alipay_pc_direct')">支付宝网页支付</span>
+    <span class="up" onclick="wap_pay('cp_b2b')">企业网银支付</span>
+</div>
+
+<script>
+    function wap_pay(channel) {
+        var amount = document.getElementById('amount').value * 100;
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost:8000/test.php", true);
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.send(JSON.stringify({
+            channel: channel,
+            amount: amount
+        }));
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText);
+                pingppPc.createPayment(xhr.responseText, function(result, err) {
+                    console.log(result);
+                    console.log(err.msg);
+                    console.log(err.extra);
+                });
+            }
+        }
+    }
+</script>
+```
+
+## Test Mode
+
+Pingpp accounts have test-mode API keys as well as live-mode API keys. These keys can be active
+at the same time. Data created with test-mode credentials will never hit the real payment channel networks
+and will never cost anyone money.
+
+Unlike some gateways, there is no test mode endpoint separate to the live mode endpoint, the
+Pingpp API endpoint is the same for test and for live.
+
+
+
 ## FAQ
 
 ### Is it compatible with Ping++ official SDK?
