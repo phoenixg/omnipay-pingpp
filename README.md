@@ -50,8 +50,8 @@ use Omnipay\Pingpp\Common\Channels;
 /**
  * Get key and App ID in Ping++ Dashboard: https://dashboard.pingxx.com/
  */
-$skLiveKey = 'sk_live_iv5yr1HWLOqHjbjTq1KWLmD4';
-$appId = 'app_9SSaPOaDuPCKvHSy';
+$skLiveKey = 'sk_live_************************';
+$appId = 'app_****************';
 
 /**
  * The payment channel you have configured in Ping++
