@@ -50,6 +50,10 @@ class Response extends AbstractResponse
             return $this->data['id'];
         }
 
+        if (isset($this->data['object']) && 'batch_transfer' === $this->data['object']) {
+            return $this->data['id'];
+        }
+
         if (isset($this->data['error']) && isset($this->data['error']['charge'])) {
             return $this->data['error']['charge'];
         }

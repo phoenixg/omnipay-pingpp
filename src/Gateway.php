@@ -195,7 +195,7 @@ class Gateway extends AbstractGateway
      */
     public function batchRefund(array $parameters = array())
     {
-        return $this->createRequest(\Omnipay\Pingpp\Message\BatchRefundRequestTest::class, $parameters);
+        return $this->createRequest(\Omnipay\Pingpp\Message\BatchRefundRequest::class, $parameters);
     }
 
     /**
@@ -305,5 +305,51 @@ class Gateway extends AbstractGateway
     {
         return $this->createRequest(\Omnipay\Pingpp\Message\CancelTransferRequest::class, $parameters);
     }
+
+
+    /**
+     * Batch Transfer Request.
+     *
+     * @param array $parameters
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function batchTransfer(array $parameters = array())
+    {
+        return $this->createRequest(\Omnipay\Pingpp\Message\BatchTransferRequest::class, $parameters);
+    }
+
+    /**
+     * Fetch Batch Transfer Request.
+     *
+     * @param array $parameters
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function fetchBatchTransfer(array $parameters = array())
+    {
+        return $this->createRequest(\Omnipay\Pingpp\Message\FetchBatchTransferRequest::class, $parameters);
+    }
+
+    /**
+     * Cancel Batch Transfer Request.
+     *
+     * @param array $parameters
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function cancelBatchTransfer(array $parameters = array())
+    {
+        return $this->createRequest(\Omnipay\Pingpp\Message\CancelBatchTransferRequest::class, $parameters);
+    }
+
+    /**
+     * Fetch Event Request.
+     *
+     * @param array $parameters
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function fetchEvent(array $parameters = array())
+    {
+        return $this->createRequest(\Omnipay\Pingpp\Message\FetchEventRequest::class, $parameters);
+    }
+
 
 }

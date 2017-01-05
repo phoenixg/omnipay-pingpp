@@ -1,5 +1,9 @@
 # Omnipay: Pingpp
 
+[![Build Status](https://api.travis-ci.org/phoenixg/omnipay-pingpp.png?branch=master)](https://api.travis-ci.org/phoenixg/omnipay-pingpp)
+[![Latest Stable Version](https://poser.pugx.org/phoenixg/omnipay-pingpp/version.png)](https://packagist.org/packages/phoenixg/omnipay-pingpp)
+[![Total Downloads](https://poser.pugx.org/phoenixg/omnipay-pingpp/d/total.png)](https://packagist.org/packages/phoenixg/omnipay-pingpp)
+
 ## Introduction
 
 **Ping++ driver for the Omnipay PHP payment processing library**
@@ -20,7 +24,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "phoenixg/omnipay-pingpp": "dev-master"
+        "phoenixg/omnipay-pingpp": "^1.0"
     }
 }
 ```
@@ -314,6 +318,136 @@ $transferList = $gateway->fetchTransferList(array(
 $response = $transferList->send();
 ```
 
+### Batch Transfer (创建批量转账)
+```php
+/**
+ * @var \Omnipay\Pingpp\Message\BatchTransferRequest $batchTransfer
+ */
+$batchTransfer = $gateway->batchTransfer(array(
+    'app' => $appId,
+    'batchTransferReference' => Helpers::generateBatchTransferReference(),
+    'recipients' => array(
+        array(
+            'account' => 'alipay account for receiver',
+            'amount' => 0.01,
+            'name' => 'receiver name A',
+            'description' => '', // optional
+        ),
+        array(
+            'account' => 'alipay account for receiver',
+            'amount' => 0.01,
+            'name' => 'receiver name B',
+            'description' => '', // optional
+        }
+    ),
+    'channel' => Channels::ALIPAY, // only support "alipay", "unionpay" channel
+    'amount' => 0.02,
+    'description'  => 'Demo batch transfer description.',
+    'currency' => 'cny',
+    'type' => 'b2c',
+    'metadata'     => array('foo' => 'bar'), // optional
+));
+$response = $batchTransfer->send();
+```
+
+### Fetch Batch Transfer (查询单个批量转账批次号)
+```php
+/**
+ * @var \Omnipay\Pingpp\Message\FetchBatchTransferRequest $batchTransfer
+ */
+$batchTransfer = $gateway->fetchBatchTransfer();
+$batchTransfer->setBatchTransferReference('batch_no_20160801001');
+$response = $batchTransfer->send();
+```
+
+### Cancel Batch Transfer (取消批量转账)
+```php
+/**
+ * @var \Omnipay\Pingpp\Message\CancelBatchTransferRequest $cancel
+ */
+$cancel = $gateway->cancelBatchTransfer();
+$cancel->setTransactionReference('batch_no_20160801001');
+$response = $cancel->send();
+```
+
+### Fetch Event (查询 Event 事件)
+```php
+/**
+ * @var \Omnipay\Pingpp\Message\FetchEventRequest $event
+ */
+$event = $gateway->fetchEvent();
+$event->setEventReference('evt_lqVSy5gbL0A68pS8YKvJzdWZ');
+$response = $event->send();
+```
+
+## Webhooks
+
+To configure your webhooks URL, simply login Ping++ Dashboard, for more information, check out: [docs](https://www.pingxx.com/docs/webhooks/webhooks)
+
+Code below shows how you can verify whether the webhooks you receive is sent by Ping++:
+
+```php
+// Retrieve signature in header
+$signature = $headers['X-Pingplusplus-Signature'] ?: null;
+
+// Get the Ping++ RSA Public Key in Dashboard
+$pub_key_contents = file_get_contents(__DIR__ . "/pingpp_rsa_public_key.pem");
+
+if (openssl_verify(file_get_contents('php://input'), base64_decode($signature), $pub_key_contents, 'sha256')) {
+    // Congrats! This request is from Ping++
+    exit;
+} 
+
+http_response_code(400);
+```
+
+## pingpp.js
+
+The minimum integration for PC payment is simple, first you need to load [pingpp.js](https://github.com/PingPlusPlus/pingpp-js/blob/master/dist/pingpp.js) , 
+then test with code below:
+
+```html
+<div class="app">
+    <label><input id="amount" type="text" placeholder="金 额"/></label>
+    <span class="up" onclick="wap_pay('upacp_pc')">银联网页支付</span>
+    <span class="up" onclick="wap_pay('alipay_pc_direct')">支付宝网页支付</span>
+    <span class="up" onclick="wap_pay('cp_b2b')">企业网银支付</span>
+</div>
+
+<script>
+    function wap_pay(channel) {
+        var amount = document.getElementById('amount').value * 100;
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost:8000/test.php", true);
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.send(JSON.stringify({
+            channel: channel,
+            amount: amount
+        }));
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText);
+                pingppPc.createPayment(xhr.responseText, function(result, err) {
+                    console.log(result);
+                    console.log(err.msg);
+                    console.log(err.extra);
+                });
+            }
+        }
+    }
+</script>
+```
+
+## Test Mode
+
+Pingpp accounts have test-mode API keys as well as live-mode API keys. These keys can be active
+at the same time. Data created with test-mode credentials will never hit the real payment channel networks
+and will never cost anyone money.
+
+Unlike some gateways, there is no test mode endpoint separate to the live mode endpoint, the
+Pingpp API endpoint is the same for test and for live.
+
+
 
 ## FAQ
 
@@ -323,14 +457,15 @@ Yes. It's 100% compatible with official API.
 
 ### Why use omnipay-pingpp instead of Ping++ official SDK?
 
-- Because it's simpler, more elegant, more consistantly designed
+- It's simpler, more elegant, more consistantly designed
   简单，优雅，一致的设计
-- Because the implementation to the official API is more covered than SDK
+- The implementation to the official API is more covered than SDK
   对官方 API 的实现比 SDK 覆盖更多
-- Because it's fully unit tested
+- It's fully unit tested
   完全的单元测试
-- Because it's easier to switch between Chinese and other payment gateways (like Paypal) if you're running global business
+- It's easier to switch between Chinese and other payment gateways (like Paypal) if you're running global business
   国内国外支付网关的切换变得一致和流畅
+- 你需要一个聚合了国内主流渠道的支付网关，并且希望它遵循一套合理的标准
 
 
 ## Terminology
