@@ -3,6 +3,7 @@ namespace Omnipay\Pingpp\Common;
 
 /**
  * Pingpp Helpers
+ *
  * @package Omnipay\Pingpp\Common
  */
 class Helpers
@@ -13,8 +14,8 @@ class Helpers
      * A merchant transaction id generator compatible with
      * all Ping++ supported payment channels
      *
-     * @link https://www.pingxx.com/api#创建-charge-对象
-     * @param bool $short
+     * @link   https://www.pingxx.com/api#创建-charge-对象
+     * @param  bool $short
      * @return string
      */
     public static function generateTransactionId($short = false)
@@ -22,7 +23,8 @@ class Helpers
         /**
          * 10 digits, use this length when you need cmb_wallet payment channel
          */
-        if ($short) return (string) time();
+        if ($short) { return (string) time();
+        }
 
         /**
          * 20 digits, use this length as default
@@ -36,12 +38,12 @@ class Helpers
      * A batch refund reference id generator compatible with
      * all Ping++ supported payment channels
      *
-     * @link https://www.pingxx.com/api#batch-refunds-批量退款
+     * @link   https://www.pingxx.com/api#batch-refunds-批量退款
      * @return string
      */
     public static function generateBatchRefundReference()
     {
-        return (string) 'batch_no_'.date('YmdHis').rand(0,9);
+        return (string) 'batch_no_'.date('YmdHis').rand(0, 9);
     }
 
     /**
@@ -50,12 +52,12 @@ class Helpers
      * A batch transfer reference id generator compatible with
      * all Ping++ supported payment channels
      *
-     * @link https://www.pingxx.com/api#创建-batch-transfer-对象
+     * @link   https://www.pingxx.com/api#创建-batch-transfer-对象
      * @return string
      */
     public static function generateBatchTransferReference()
     {
-        return (string) 'batch_no_'.date('YmdHis').rand(0,9);
+        return (string) 'batch_no_'.date('YmdHis').rand(0, 9);
     }
 
     /**
@@ -82,13 +84,13 @@ class Helpers
      *
      * Currently transfer is only available to "wx_pub" and "unionpay" channels
      *
-     * @param $channel
+     * @param  $channel
      * @return null|string
      */
     public static function generateTransferTransactionId($channel)
     {
         if ($channel == Channels::WX_PUB) {
-            return (string) 'transfer_'.date('YmdHis').rand(0,9);
+            return (string) 'transfer_'.date('YmdHis').rand(0, 9);
         }
 
         if ($channel == Channels::UNIONPAY) {

@@ -36,7 +36,7 @@ use Omnipay\Common\AbstractGateway;
  * How to configure your rsa public key on dashboard: https://help.pingxx.com/article/152108
  *
  * @package Omnipay\Pingpp
- * @link https://www.pingxx.com/api
+ * @link    https://www.pingxx.com/api
  */
 class Gateway extends AbstractGateway
 {
@@ -76,7 +76,7 @@ class Gateway extends AbstractGateway
     /**
      * Set the gateway API key.
      *
-     * @param $value
+     * @param  $value
      * @return $this
      */
     public function setApiKey($value)
@@ -97,7 +97,7 @@ class Gateway extends AbstractGateway
     /**
      * Set the RSA private key
      *
-     * @param $value
+     * @param  $value
      * @return $this
      */
     public function setPrivateKey($value)
@@ -115,7 +115,7 @@ class Gateway extends AbstractGateway
      * Different payment channels require different channel extra fields,
      * which list can be found: https://www.pingxx.com/api?language=PHP#支付渠道-extra-参数说明
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function purchase(array $parameters = array())
@@ -135,7 +135,7 @@ class Gateway extends AbstractGateway
      * charged from. The fees you were originally charged will be refunded
      * depend upon your payment channel.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function refund(array $parameters = array())
@@ -146,7 +146,7 @@ class Gateway extends AbstractGateway
     /**
      * Fetch Transaction Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function fetchTransaction(array $parameters = array())
@@ -157,7 +157,7 @@ class Gateway extends AbstractGateway
     /**
      * Fetch Transaction List Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function fetchTransactionList(array $parameters = array())
@@ -168,7 +168,7 @@ class Gateway extends AbstractGateway
     /**
      * Fetch Refund Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function fetchRefund(array $parameters = array())
@@ -179,7 +179,7 @@ class Gateway extends AbstractGateway
     /**
      * Fetch Refund List Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function fetchRefundList(array $parameters = array())
@@ -190,7 +190,7 @@ class Gateway extends AbstractGateway
     /**
      * Batch Refund Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function batchRefund(array $parameters = array())
@@ -201,7 +201,7 @@ class Gateway extends AbstractGateway
     /**
      * Fetch Batch Refund Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function fetchBatchRefund(array $parameters = array())
@@ -212,7 +212,7 @@ class Gateway extends AbstractGateway
     /**
      * Fetch Batch Refund List Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function fetchBatchRefundList(array $parameters = array())
@@ -223,7 +223,7 @@ class Gateway extends AbstractGateway
     /**
      * Red Envelope Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function redEnvelope(array $parameters = array())
@@ -234,7 +234,7 @@ class Gateway extends AbstractGateway
     /**
      * Fetch Red Envelope Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function fetchRedEnvelope(array $parameters = array())
@@ -245,7 +245,7 @@ class Gateway extends AbstractGateway
     /**
      * Fetch Red Envelope List Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function fetchRedEnvelopeList(array $parameters = array())
@@ -263,7 +263,7 @@ class Gateway extends AbstractGateway
      * Different payment channels require different channel extra fields,
      * which list can be found: https://www.pingxx.com/api#企业付款-extra-参数说明
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function transfer(array $parameters = array())
@@ -274,7 +274,7 @@ class Gateway extends AbstractGateway
     /**
      * Fetch Transfer Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function fetchTransfer(array $parameters = array())
@@ -285,7 +285,7 @@ class Gateway extends AbstractGateway
     /**
      * Fetch Transfer List Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function fetchTransferList(array $parameters = array())
@@ -298,7 +298,7 @@ class Gateway extends AbstractGateway
      *
      * Currently only "unionpay" channel is supported
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function cancelTransfer(array $parameters = array())
@@ -310,7 +310,7 @@ class Gateway extends AbstractGateway
     /**
      * Batch Transfer Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function batchTransfer(array $parameters = array())
@@ -321,7 +321,7 @@ class Gateway extends AbstractGateway
     /**
      * Fetch Batch Transfer Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function fetchBatchTransfer(array $parameters = array())
@@ -332,7 +332,7 @@ class Gateway extends AbstractGateway
     /**
      * Cancel Batch Transfer Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function cancelBatchTransfer(array $parameters = array())
@@ -343,7 +343,7 @@ class Gateway extends AbstractGateway
     /**
      * Fetch Event Request.
      *
-     * @param array $parameters
+     * @param  array $parameters
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function fetchEvent(array $parameters = array())

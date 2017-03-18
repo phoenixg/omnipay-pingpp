@@ -9,7 +9,7 @@ namespace Omnipay\Pingpp\Common;
  * and is returned within corresponding object.
  *
  * @package Omnipay\Pingpp\Common
- * @link https://www.pingxx.com/api#支付渠道属性值
+ * @link    https://www.pingxx.com/api#支付渠道属性值
  */
 abstract class Channels
 {

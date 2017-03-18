@@ -25,7 +25,7 @@ class BatchRefundRequest extends AbstractRequest
     /**
      * Set the batch no.
      *
-     * @param $value
+     * @param  $value
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function setBatchRefundReference($value)
@@ -46,7 +46,7 @@ class BatchRefundRequest extends AbstractRequest
     /**
      * Set the charge id list.
      *
-     * @param $value
+     * @param  $value
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function setChargeIdList($value)

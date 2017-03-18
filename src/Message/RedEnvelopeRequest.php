@@ -107,7 +107,7 @@ class RedEnvelopeRequest extends AbstractRequest
      */
     public function getData()
     {
-        $this->validate( 'appId', 'transactionId', 'channel', 'amount', 'currency', 'subject', 'body', 'sender', 'receiver' );
+        $this->validate('appId', 'transactionId', 'channel', 'amount', 'currency', 'subject', 'body', 'sender', 'receiver');
 
         $data = array();
         $data['app'] = array('id' => $this->getAppId());

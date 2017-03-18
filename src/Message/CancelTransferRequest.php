@@ -8,7 +8,7 @@ namespace Omnipay\Pingpp\Message;
 /**
  * Pingpp Cancel Transfer Request.
  *
- * @link https://www.pingxx.com/api#更新-transfer对象
+ * @link    https://www.pingxx.com/api#更新-transfer对象
  * @package Omnipay\Pingpp\Message
  */
 class CancelTransferRequest extends AbstractRequest

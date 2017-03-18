@@ -24,7 +24,7 @@ class FetchEventRequest extends AbstractRequest
     /**
      * Set the event reference.
      *
-     * @param $value
+     * @param  $value
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function setEventReference($value)

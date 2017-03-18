@@ -8,7 +8,7 @@ namespace Omnipay\Pingpp\Message;
 /**
  * Pingpp Refund Request.
  *
- * @see https://www.pingxx.com/api#创建-refund-对象
+ * @see     https://www.pingxx.com/api#创建-refund-对象
  * @package Omnipay\Pingpp\Message
  */
 class RefundRequest extends AbstractRequest

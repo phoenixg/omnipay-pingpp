@@ -12,8 +12,8 @@ use Omnipay\Common\Message\RequestInterface;
  *
  * This is the parent class for all Pingpp requests.
  *
- * @see \Omnipay\Pingpp\Gateway
- * @link https://www.pingxx.com/api
+ * @see    \Omnipay\Pingpp\Gateway
+ * @link   https://www.pingxx.com/api
  * @method \Omnipay\Pingpp\Message\Response send()
  */
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
@@ -38,7 +38,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     /**
      * Set the gateway API Key.
      *
-     * @param $value
+     * @param  $value
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function setApiKey($value)
@@ -59,7 +59,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     /**
      * Set the RSA private key.
      *
-     * @param $value
+     * @param  $value
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function setPrivateKey($value)
@@ -82,7 +82,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     /**
      * Set APP ID in Ping++.
      *
-     * @param $value
+     * @param  $value
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function setAppId($value)
@@ -103,7 +103,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     /**
      * Set metadata.
      *
-     * @param $value
+     * @param  $value
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function setMetadata($value)
@@ -142,7 +142,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     /**
      * Get send data.
      *
-     * @param mixed $data
+     * @param  mixed $data
      * @return Response
      * @throws \Exception
      */

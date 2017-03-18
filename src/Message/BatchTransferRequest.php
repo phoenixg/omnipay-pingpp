@@ -25,7 +25,7 @@ class BatchTransferRequest extends AbstractRequest
     /**
      * Set the batch no.
      *
-     * @param $value
+     * @param  $value
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function setBatchTransferReference($value)
@@ -86,7 +86,7 @@ class BatchTransferRequest extends AbstractRequest
 
     public function getData()
     {
-        $this->validate('appId', 'batchTransferReference','channel', 'description');
+        $this->validate('appId', 'batchTransferReference', 'channel', 'description');
 
         $data = array();
 

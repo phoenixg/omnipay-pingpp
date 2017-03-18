@@ -24,7 +24,7 @@ class FetchBatchRefundRequest extends AbstractRequest
     /**
      * Set the batch refund reference.
      *
-     * @param $value
+     * @param  $value
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function setBatchRefundReference($value)

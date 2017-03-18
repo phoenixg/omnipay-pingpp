@@ -24,7 +24,7 @@ class FetchBatchTransferRequest extends AbstractRequest
     /**
      * Set the batch transfer reference.
      *
-     * @param $value
+     * @param  $value
      * @return \Omnipay\Common\Message\AbstractRequest
      */
     public function setBatchTransferReference($value)

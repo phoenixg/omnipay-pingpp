@@ -108,48 +108,48 @@ class PurchaseRequest extends AbstractRequest
         $extraUrl = [];
 
         switch($channel) {
-            case Channels::ALIPAY_WAP:
-                $extraUrl['success_url'] = $this->getReturnUrl();
-                if ($this->getCancelUrl()) {
-                    $extraUrl['cancel_url'] = $this->getCancelUrl();
-                }
-                break;
-            case Channels::ALIPAY_PC_DIRECT:
-                $extraUrl['success_url'] = $this->getReturnUrl();
-                break;
-            case Channels::BFB_WAP:
-                $extraUrl['result_url'] = $this->getReturnUrl();
-                break;
-            case Channels::UPACP_WAP:
-                $extraUrl['result_url'] = $this->getReturnUrl();
-                break;
-            case Channels::UPACP_PC:
-                $extraUrl['result_url'] = $this->getReturnUrl();
-                break;
-            case Channels::WX_WAP:
-                $extraUrl['result_url'] = $this->getReturnUrl();
-                break;
-            case Channels::YEEPAY_WAP:
-                $extraUrl['result_url'] = $this->getReturnUrl();
-                break;
-            case Channels::JDPAY_WAP:
-                $extraUrl['success_url'] = $this->getReturnUrl();
-                break;
-            case Channels::FQLPAY_WAP:
-                if ($this->getReturnUrl()) {
-                    $extraUrl['return_url'] = $this->getReturnUrl();
-                }
-                break;
-            case Channels::QGBC_WAP:
-                if ($this->getReturnUrl()) {
-                    $extraUrl['return_url'] = $this->getReturnUrl();
-                }
-                break;
-            case Channels::CMB_WALLET:
-                $extraUrl['result_url'] = $this->getReturnUrl();
-                break;
-            default:
-                break;
+        case Channels::ALIPAY_WAP:
+            $extraUrl['success_url'] = $this->getReturnUrl();
+            if ($this->getCancelUrl()) {
+                $extraUrl['cancel_url'] = $this->getCancelUrl();
+            }
+            break;
+        case Channels::ALIPAY_PC_DIRECT:
+            $extraUrl['success_url'] = $this->getReturnUrl();
+            break;
+        case Channels::BFB_WAP:
+            $extraUrl['result_url'] = $this->getReturnUrl();
+            break;
+        case Channels::UPACP_WAP:
+            $extraUrl['result_url'] = $this->getReturnUrl();
+            break;
+        case Channels::UPACP_PC:
+            $extraUrl['result_url'] = $this->getReturnUrl();
+            break;
+        case Channels::WX_WAP:
+            $extraUrl['result_url'] = $this->getReturnUrl();
+            break;
+        case Channels::YEEPAY_WAP:
+            $extraUrl['result_url'] = $this->getReturnUrl();
+            break;
+        case Channels::JDPAY_WAP:
+            $extraUrl['success_url'] = $this->getReturnUrl();
+            break;
+        case Channels::FQLPAY_WAP:
+            if ($this->getReturnUrl()) {
+                $extraUrl['return_url'] = $this->getReturnUrl();
+            }
+            break;
+        case Channels::QGBC_WAP:
+            if ($this->getReturnUrl()) {
+                $extraUrl['return_url'] = $this->getReturnUrl();
+            }
+            break;
+        case Channels::CMB_WALLET:
+            $extraUrl['result_url'] = $this->getReturnUrl();
+            break;
+        default:
+            break;
         }
 
         return $extraUrl;
