@@ -1,6 +1,5 @@
 # Omnipay: Pingpp
 
-[![Build Status](https://api.travis-ci.org/phoenixg/omnipay-pingpp.png?branch=master)](https://api.travis-ci.org/phoenixg/omnipay-pingpp)
 [![Latest Stable Version](https://poser.pugx.org/phoenixg/omnipay-pingpp/version.png)](https://packagist.org/packages/phoenixg/omnipay-pingpp)
 [![Total Downloads](https://poser.pugx.org/phoenixg/omnipay-pingpp/d/total.png)](https://packagist.org/packages/phoenixg/omnipay-pingpp)
 
