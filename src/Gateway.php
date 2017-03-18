@@ -350,6 +350,4 @@ class Gateway extends AbstractGateway
     {
         return $this->createRequest(\Omnipay\Pingpp\Message\FetchEventRequest::class, $parameters);
     }
-
-
 }

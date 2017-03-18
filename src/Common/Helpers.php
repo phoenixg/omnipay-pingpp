@@ -23,7 +23,8 @@ class Helpers
         /**
          * 10 digits, use this length when you need cmb_wallet payment channel
          */
-        if ($short) { return (string) time();
+        if ($short) {
+            return (string) time();
         }
 
         /**
