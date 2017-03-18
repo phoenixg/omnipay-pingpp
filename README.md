@@ -76,6 +76,31 @@ try {
 }
 ```
 
+### API List 
+
+| METHOD | INTRODUCTION | 
+| :--- | :------- | 
+| `$gateway->purchase()` | 创建 Charge |
+| `$gateway->fetchTransaction()` | 查询单笔 Charge |
+| `$gateway->fetchTransactionList()` | 查询 Charge 列表 |
+| `$gateway->refund()` | 创建退款 |
+| `$gateway->fetchRefund()` | 查询单笔退款 |
+| `$gateway->fetchRefundList()` | 查询退款列表 |
+| `$gateway->batchRefund()` | 创建批量退款 |
+| `$gateway->fetchBatchRefund()`| 查询单个批量退款批次号 |
+| `$gateway->fetchBatchRefundList()` | 查询批量退款列表 |
+| `$gateway->redEnvelope()` | 发送红包 |
+| `$gateway->fetchRedEnvelope()` | 查询单笔红包 |
+| `$gateway->fetchRedEnvelopeList()` | 查询红包列表 |
+| `$gateway->transfer()` | 创建转账 |
+| `$gateway->cancelTransfer()` | 取消转账 |
+| `$gateway->fetchTransfer()` | 查询单笔转账 |
+| `$gateway->fetchTransferList()` | 查询转账列表 |
+| `$gateway->batchTransfer()` | 创建批量转账 |
+| `$gateway->fetchBatchTransfer()` | 查询单个批量转账批次号 |
+| `$gateway->cancelBatchTransfer()` | 取消批量转账 |
+| `$gateway->fetchEvent()` | 查询 Event 事件 |
+
 ### Create Charge (创建 Charge)
 ```php
 /**
