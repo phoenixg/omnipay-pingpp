@@ -343,6 +343,9 @@ $response = $transferList->send();
 ```
 
 ### Batch Transfer (创建批量转账)
+
+`recipients` 参数参考 `src/Common/Recipients.php` 的说明
+
 ```php
 /**
  * @var \Omnipay\Pingpp\Message\BatchTransferRequest $batchTransfer
