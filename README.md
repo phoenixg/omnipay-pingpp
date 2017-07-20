@@ -291,6 +291,9 @@ $response = $redEnvelopeList->send();
 ```
 
 ### Transfer (创建转账)
+
+`channelExtraFields` 参数参考 `src/Common/TransferExtras.php` 的说明
+
 ```php
 /**
  * @var \Omnipay\Pingpp\Message\TransferRequest $transfer

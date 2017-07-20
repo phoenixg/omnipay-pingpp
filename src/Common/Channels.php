@@ -109,6 +109,11 @@ abstract class Channels
     const YEEPAY_WAP = 'yeepay_wap';
 
     /**
+     * 京东支付（Transfer）
+     */
+    const JDPAY = 'jdpay';
+
+    /**
      * 京东手机网页支付
      * jdpay wap payment channel
      */
@@ -154,4 +159,9 @@ abstract class Channels
      * unionpay transfer channel
      */
     const UNIONPAY = 'unionpay';
+
+    /**
+     * 通联代付(Transfer)
+     */
+    const ALLINPAY = 'allinpay';
 }
