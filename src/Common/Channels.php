@@ -164,4 +164,20 @@ abstract class Channels
      * 通联代付(Transfer)
      */
     const ALLINPAY = 'allinpay';
+
+    /**
+     * 线下扫码（主扫）
+     */
+    const ISV_QR = 'isv_qr';
+
+    /**
+     * 线下扫码（被扫）
+     */
+    const ISV_SCAN = 'isv_scan';
+
+    /**
+     * 线下扫码（固定码）
+     */
+    const ISV_WAP = 'isv_wap';
+
 }

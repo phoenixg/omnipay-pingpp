@@ -82,6 +82,7 @@ try {
 | `$gateway->purchase()` | 创建 Charge |
 | `$gateway->fetchTransaction()` | 查询单笔 Charge |
 | `$gateway->fetchTransactionList()` | 查询 Charge 列表 |
+| `$gateway->reverse()` | Charge 撤销（仅支持isv线下渠道，如已支付会退款） |
 | `$gateway->refund()` | 创建退款 |
 | `$gateway->fetchRefund()` | 查询单笔退款 |
 | `$gateway->fetchRefundList()` | 查询退款列表 |
@@ -148,6 +149,16 @@ if ($response->isSuccessful()) {
  * @var \Omnipay\Pingpp\Message\FetchTransactionRequest $transaction
  */
 $transaction = $gateway->fetchTransaction();
+$transaction->setTransactionReference('ch_DaHuXHjHeX98GO84COzbfTiP');
+$response = $transaction->send();
+```
+
+### Reverse Charge (撤销单笔 Charge，只支持isv_*线下渠道。如已付款，则撤销会退款)
+```php
+/**
+ * @var \Omnipay\Pingpp\Message\ReverseTransactionRequest $transaction
+ */
+$transaction = $gateway->reverse();
 $transaction->setTransactionReference('ch_DaHuXHjHeX98GO84COzbfTiP');
 $response = $transaction->send();
 ```

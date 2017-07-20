@@ -144,6 +144,17 @@ class Gateway extends AbstractGateway
     }
 
     /**
+     * Reverse Charge Request (ISV_* channels supported only)
+     *
+     * @param array $parameters
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function reverse(array $parameters = array())
+    {
+        return $this->createRequest(\Omnipay\Pingpp\Message\ReverseTransactionRequest::class, $parameters);
+    }
+
+    /**
      * Fetch Transaction Request.
      *
      * @param  array $parameters
