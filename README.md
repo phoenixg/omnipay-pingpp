@@ -82,7 +82,7 @@ try {
 | `$gateway->purchase()` | 创建 Charge |
 | `$gateway->fetchTransaction()` | 查询单笔 Charge |
 | `$gateway->fetchTransactionList()` | 查询 Charge 列表 |
-| `$gateway->reverse()` | Charge 撤销（仅支持isv线下渠道，如已支付会退款） |
+| `$gateway->reverse()` | 撤销 Charge（仅支持isv线下渠道，如已支付会退款） |
 | `$gateway->refund()` | 创建退款 |
 | `$gateway->fetchRefund()` | 查询单笔退款 |
 | `$gateway->fetchRefundList()` | 查询退款列表 |
