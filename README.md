@@ -101,6 +101,9 @@ try {
 | `$gateway->fetchEvent()` | 查询 Event 事件 |
 
 ### Create Charge (创建 Charge)
+
+`channelExtraFields` 参数参考 `src/Common/ChargeChannelExtras.php` 的说明
+
 ```php
 /**
  * @var \Omnipay\Pingpp\Message\PurchaseRequest $transaction
@@ -344,7 +347,7 @@ $response = $transferList->send();
 
 ### Batch Transfer (创建批量转账)
 
-`recipients` 参数参考 `src/Common/Recipients.php` 的说明
+`recipients` 参数参考 `src/Common/BatchTransferRecipients.php` 的说明
 
 ```php
 /**

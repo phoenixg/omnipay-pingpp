@@ -98,6 +98,11 @@ abstract class Channels
     const WX_WAP = 'wx_wap';
 
     /**
+     * 微信小程序支付
+     */
+    const WX_LITE = 'wx_lite';
+
+    /**
      * 易宝手机网页支付
      * yeepay wap payment channel
      */

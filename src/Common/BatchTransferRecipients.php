@@ -6,7 +6,7 @@
  * Time: 下午4:12
  */
 
-$channel = 'your_channel';
+$channel = 'your_transfer_channel';
 
 if ($channel == 'alipay') {
     return [
