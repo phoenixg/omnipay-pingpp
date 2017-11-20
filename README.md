@@ -175,7 +175,7 @@ $transactionList = $gateway->fetchTransactionList(array(
     'refunded' => 0,
     'createdFrom' => 1481116461,
     'createdTo' => 1477723630,
-    'limit' => 2,
+    'limit' => 5,
 ));
 $response = $transactionList->send();
 ```
@@ -213,7 +213,7 @@ $response = $refund->send();
  */
 $refundList = $gateway->fetchRefundList(array(
     'transactionReference' => 'ch_qDun9KKC0uz9G0KSGKaHKybP',
-    'limit' => 2,
+    'limit' => 5,
 ));
 $response = $refundList->send();
 ```
@@ -253,7 +253,7 @@ $response = $batchRefund->send();
  */
 $batchRefundList = $gateway->fetchBatchRefundList(array(
     'appId' => $appId,
-    'limit' => 2,
+    'limit' => 5,
 ));
 $response = $batchRefundList->send();
 ```
@@ -296,7 +296,7 @@ $response = $redEnvelope->send();
  */
 $redEnvelopeList = $gateway->fetchRedEnvelopeList(array(
     'appId' => $appId,
-    'limit' => 2,
+    'limit' => 5,
 ));
 $response = $redEnvelopeList->send();
 ```
@@ -354,7 +354,7 @@ $response = $transfer->send();
  */
 $transferList = $gateway->fetchTransferList(array(
     'appId' => $appId,
-    'limit' => 2,
+    'limit' => 5,
 ));
 $response = $transferList->send();
 ```
