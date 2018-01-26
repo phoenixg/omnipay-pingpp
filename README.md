@@ -305,6 +305,8 @@ $response = $redEnvelopeList->send();
 
 `channelExtraFields` 参数参考 `src/Common/TransferExtras.php` 的说明
 
+如果返回 `请求来源存在风险，请联系Ping++。` 报错， 是因为没有在 Ping++ 管理平台配置 IP 白名单， 默认是强制开启的。
+
 ```php
 /**
  * @var \Omnipay\Pingpp\Message\TransferRequest $transfer
