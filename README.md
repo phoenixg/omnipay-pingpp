@@ -506,12 +506,14 @@ Yes. It's 100% compatible with official API.
 - It's simpler, more elegant, more consistantly designed
   简单，优雅，一致的设计
 - The implementation to the official API is more covered than SDK
-  对官方 API 的实现比 SDK 覆盖更多
+  对官方常用 API 的实现比 SDK 覆盖更多
 - It's fully unit tested
   完全的单元测试
 - It's easier to switch between Chinese and other payment gateways (like Paypal) if you're running global business
   国内国外支付网关的切换变得一致和流畅
 - 你需要一个聚合了国内主流渠道的支付网关，并且希望它遵循一套合理的标准
+- 你没有打算使用 Ping++ 账户系统和商户系统的复杂接口（本类库没有集成那些接口, KISS）
+- 你希望世界是简单的，可能只提供你需要关心的那些参数即可，你不打算了解每一个很可能不会用到的支付参数
 
 
 ## Terminology
