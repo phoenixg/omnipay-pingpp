@@ -99,7 +99,7 @@ try {
 | `$gateway->batchTransfer()` | 创建批量转账 |
 | `$gateway->fetchBatchTransfer()` | 查询单个批量转账批次号 |
 | `$gateway->cancelBatchTransfer()` | 取消批量转账 |
-| ~~`$gateway->fetchEvent()`～～ | ～～查询 Event 事件~~ |
+| `$gateway->fetchEvent()` | 查询 Event 事件（已废弃）|
 
 ### Create Charge (创建 Charge)
 
