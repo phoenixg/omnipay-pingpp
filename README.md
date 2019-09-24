@@ -531,3 +531,7 @@ If you are having general issues with Omnipay, we suggest posting on
 
 If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/phoenixg/omnipay-pingpp/issues),
 or better yet, fork the library and submit a pull request.
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/phoenixg/omnipay-pingpp.svg)](https://starchart.cc/phoenixg/omnipay-pingpp)
