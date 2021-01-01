@@ -513,7 +513,8 @@ Yes. It's 100% compatible with official API.
   国内国外支付网关的切换变得一致和流畅
 - 你需要一个聚合了国内主流渠道的支付网关，并且希望它遵循一套合理的标准
 - 你没有打算使用 Ping++ 账户系统和商户系统的复杂接口（本类库没有集成那些接口, KISS）
-- 你希望世界是简单的，可能只提供你需要关心的那些参数即可，你不打算了解每一个很可能不会用到的支付参数
+- You like keeping thing simple, you want to care about only the needed parameters, not all 
+你希望世界是简单的，可能只提供你需要关心的那些参数即可，你不打算了解每一个很可能不会用到的支付参数
 
 
 ## Terminology
